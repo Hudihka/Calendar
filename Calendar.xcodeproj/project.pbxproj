@@ -33,6 +33,7 @@
 		CEBAC30923E40BDA00F0478D /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2F123E40BDA00F0478D /* NSObject.swift */; };
 		CEBAC30A23E40BDA00F0478D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2F223E40BDA00F0478D /* Utils.swift */; };
 		CEBAC30C23E40BDA00F0478D /* Vibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2F423E40BDA00F0478D /* Vibro.swift */; };
+		CEBAC30E23E412EA00F0478D /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC30D23E412EA00F0478D /* UICollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		CEBAC2F123E40BDA00F0478D /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		CEBAC2F223E40BDA00F0478D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CEBAC2F423E40BDA00F0478D /* Vibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibro.swift; sourceTree = "<group>"; };
+		CEBAC30D23E412EA00F0478D /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				CEBAC2E023E40BDA00F0478D /* UIWindows.swift */,
 				CEBAC2E123E40BDA00F0478D /* UIView.swift */,
 				CEBAC2E223E40BDA00F0478D /* UITableView.swift */,
+				CEBAC30D23E412EA00F0478D /* UICollectionView.swift */,
 				CEBAC2E323E40BDA00F0478D /* UIDevice.swift */,
 				CEBAC2E423E40BDA00F0478D /* UITextField.swift */,
 				CEBAC2E523E40BDA00F0478D /* UIImageViewAndUIImage.swift */,
@@ -244,6 +247,7 @@
 				CEBAC30123E40BDA00F0478D /* UILabel.swift in Sources */,
 				CEBAC2FC23E40BDA00F0478D /* UIDevice.swift in Sources */,
 				CEBAC2F923E40BDA00F0478D /* UIWindows.swift in Sources */,
+				CEBAC30E23E412EA00F0478D /* UICollectionView.swift in Sources */,
 				CEBAC30623E40BDA00F0478D /* FloatAbdDouble.swift in Sources */,
 				CEBAC2F723E40BDA00F0478D /* Constats.swift in Sources */,
 				CEBAC30423E40BDA00F0478D /* Date.swift in Sources */,

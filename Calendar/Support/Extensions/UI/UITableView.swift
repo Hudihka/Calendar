@@ -38,29 +38,33 @@ extension UITableView {
 
     func baseSettingsTV(obj: UITableViewDelegate & UITableViewDataSource,
                         scrollEnabled: Bool = true,
+                        clicableCell: Bool = true,
                         separatorStyle: UITableViewCell.SeparatorStyle? = .none,
-                        heghtCell: CGFloat?,
-                        arrayNameCell: [String]?,
-                        completion: (() -> Void)?){
+                        minHeghtCell: CGFloat?,
+                        arrayNameCell: [String]?){
 
-            self.delegate = obj
-            self.dataSource = obj
-            self.backgroundColor = UIColor.clear
-            self.isScrollEnabled = scrollEnabled
+        self.delegate = obj
+        self.dataSource = obj
+        self.backgroundColor = UIColor.clear
+        self.isScrollEnabled = scrollEnabled
 
-            if let separatorStyle = separatorStyle {
-                self.separatorStyle = separatorStyle
-            }
+        if !clicableCell{
+            self.allowsSelection = false
+        }
 
-            if let heghtCell = heghtCell {
-                self.estimatedRowHeight = heghtCell
-            }
+        if let separatorStyle = separatorStyle {
+            self.separatorStyle = separatorStyle
+        }
 
-            arrayNameCell?.forEach({ (cellName) in
-                self.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
-            })
+        if let heghtCell = minHeghtCell {
+            self.estimatedRowHeight = heghtCell
+            self.rowHeight = UITableView.automaticDimension
+        }
 
-            completion?()
+        arrayNameCell?.forEach({ (cellName) in
+            self.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+        })
+
 
     }
 
