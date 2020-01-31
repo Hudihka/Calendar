@@ -29,4 +29,19 @@ extension Date {
         }
     }
 
+//    var year: UInt? {
+//        let str = self.printDate(format: "yyyy")
+//        return UInt(str)
+//    }
+//
+//    var day: UInt? {
+//        let str = self.printDate(format: "d")
+//        return UInt(str)
+//    }
+//
+//    var monthString: String{
+//        return self.printDate(format: "MMMM")
+//    }
+
+
 }
