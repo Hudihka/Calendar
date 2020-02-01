@@ -10,12 +10,12 @@ import UIKit
 
 class HeaderCollection: UICollectionReusableView {
 
-    @IBOutlet var labelYear: UILabel!
+    @IBOutlet weak var labelTest: UILabel!
 
     var year: Year? {
         didSet{
             let text = year?.numberYear ?? Date().year
-            labelYear.text = "\(text)"
+            labelTest.text = "\(text)"
         }
     }
 

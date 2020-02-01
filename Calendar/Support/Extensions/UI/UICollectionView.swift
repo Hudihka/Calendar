@@ -14,7 +14,8 @@ extension UICollectionView{
     func baseSettingsCV(obj: UICollectionViewDelegateFlowLayout & UICollectionViewDataSource,
                         scrollEnabled: Bool = true,
                         clicableCell: Bool = true,
-                        arrayNameCell: [String]?){
+                        arrayNameCell: [String]?,
+                        arrayNameHeders: [String]? = nil){
 
         self.delegate = obj
         self.dataSource = obj
@@ -30,6 +31,14 @@ extension UICollectionView{
             self.register(UINib(nibName: cellName, bundle: nil),
                                 forCellWithReuseIdentifier: cellName)
         })
+
+        arrayNameHeders?.forEach({ (header) in
+            self.register(UINib(nibName: header, bundle: nil),
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: header);
+        })
+
+
 
 
     }

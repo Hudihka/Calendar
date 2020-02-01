@@ -18,8 +18,9 @@ class YearViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView.baseSettingsCV(obj: self, arrayNameCell: ["YearsMonthCell", "HeaderCollection"])
-
+        self.collectionView.baseSettingsCV(obj: self,
+                                           arrayNameCell: ["YearsMonthCell"],
+                                           arrayNameHeders: ["HeaderCollection"])
     }
 
 
@@ -52,12 +53,12 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         return CGSize(width: widthMonth, height: heightMonth)
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-
-        return UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
-    }
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        insetForSectionAt section: Int) -> UIEdgeInsets {
+//
+//        return UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
+//    }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -72,10 +73,9 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
 
-        if kind == "HeaderCollection" {
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollection", for: indexPath)
-            return view
-        }
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollection", for: indexPath) as! HeaderCollection
+        view.year = years[indexPath.section]
+        return view
 
     }
 

@@ -13,7 +13,7 @@ class DateParser {
     static let shared = DateParser()
 
     var dateFrom: Date? = Date(day: 1, month: 1, year: 2019)
-    var dateTo: Date? = Date(day: 1, month: 1, year: 2020)
+    var dateTo: Date? = Date(day: 1, month: 1, year: 2023)
 
     var arrayYears: [Year] {
 
@@ -27,11 +27,12 @@ class DateParser {
         }
 
         let calendar = Calendar.current
-        var years: [Year]
+        var years: [Year] = []
 
-        for i in customFrom.year...customFrom.year{
+        for i in customFrom.year...customTo.year{
             if let dateYear = DateComponents(calendar: calendar, year: i).date {
-                years.append(Year(date: dateYear))
+                let year = Year(date: dateYear)
+                years.append(year)
             }
         }
 

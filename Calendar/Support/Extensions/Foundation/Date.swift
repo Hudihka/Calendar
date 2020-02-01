@@ -13,14 +13,17 @@ extension Date {
     init(day: Int?, month: Int?, year: Int?) {
 
         guard let day = day, let month = month, let year = year else {
-            self.init()
+            self = Date()
+            return
         }
 
         if month < 13, month > 0, day > 0, year > 0, let date = "\(day) \(month) \(year)".getDatwToString("dd MM yyyy") {
-            self.init(timeInterval: 0, since: date)
+            self = Date(timeInterval: 0, since: date)
+            return
+//            self.init(timeInterval: 0, since: date)
         }
 
-        self.init()
+        self = Date()
     }
 
     init(day: String, month: String, year: String) {
