@@ -93,8 +93,12 @@ struct Day {
 
     var numberWeekDay: Int
     var numberMonth  : Int
+    
+    var date         :Date
 
     init(date: Date, calendar: Calendar, numberMonth: Int) {
+        self.date          = date
+        
         self.numberWeekDay = date.weeksInMonth
         self.numberMonth   = numberMonth
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52BD153023E5F24B007D1AB2 /* MonthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD152F23E5F24B007D1AB2 /* MonthVC.swift */; };
 		CE63846923E40A5A00D66538 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63846823E40A5A00D66538 /* AppDelegate.swift */; };
 		CE63846E23E40A5A00D66538 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63846C23E40A5A00D66538 /* Main.storyboard */; };
 		CE63847023E40A5C00D66538 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE63846F23E40A5C00D66538 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52BD152F23E5F24B007D1AB2 /* MonthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthVC.swift; sourceTree = "<group>"; };
 		CE63846523E40A5A00D66538 /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE63846823E40A5A00D66538 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE63846D23E40A5A00D66538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52BD153123E5F288007D1AB2 /* MonthVC */ = {
+			isa = PBXGroup;
+			children = (
+				52BD152F23E5F24B007D1AB2 /* MonthVC.swift */,
+				52BD153223E5F34B007D1AB2 /* Header */,
+			);
+			path = MonthVC;
+			sourceTree = "<group>";
+		};
+		52BD153223E5F34B007D1AB2 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		CE63845C23E40A5A00D66538 = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				CE63846C23E40A5A00D66538 /* Main.storyboard */,
+				52BD153123E5F288007D1AB2 /* MonthVC */,
 				CEBAC31223E419AC00F0478D /* YearVC */,
 			);
 			path = Controllers;
@@ -333,6 +352,7 @@
 				CEBAC30723E40BDA00F0478D /* StringAndCrypto.swift in Sources */,
 				CEBAC30223E40BDA00F0478D /* UISegmentedControl.swift in Sources */,
 				CEBAC30A23E40BDA00F0478D /* Utils.swift in Sources */,
+				52BD153023E5F24B007D1AB2 /* MonthVC.swift in Sources */,
 				CEBAC31123E418C600F0478D /* YearViewController.swift in Sources */,
 				CEBAC30023E40BDA00F0478D /* UIViewController.swift in Sources */,
 				CEBAC2FB23E40BDA00F0478D /* UITableView.swift in Sources */,

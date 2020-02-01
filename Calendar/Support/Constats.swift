@@ -70,7 +70,7 @@ let offsetCell: CGFloat = 0
 
 let widthMonth = (wDdevice - (2 * offsetCV) - (6 * offsetCell)) / 3
 let widthDayInMonth = widthMonth / 7
-let heightMonth = (widthDayInMonth * 7) + 30 //20 высота лейбла
+let heightMonth = (widthDayInMonth * 6.5) + 30 //30 высота лейбла
 
 
 //Коллекшен вью с месяцами
