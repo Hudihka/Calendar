@@ -13,6 +13,8 @@ class YearViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    let years = DateParser.shared.arrayYears
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,12 +26,20 @@ class YearViewController: UIViewController {
 }
 
 extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return years.count
+    }
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return 12
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YearsMonthCell", for: indexPath) as! YearsMonthCell
+        cell.month = years[indexPath.section].months[indexPath.row]
+
+        return cell
     }
 
 
@@ -39,26 +49,21 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let paddingSpace = sectionInsets.left + sectionInsets.right
-        let widthPerItem = collectionView.bounds.width - paddingSpace
-        //мы берем отступы по сторонам и отнимаем
-        //это от ширины коллекции
-        return CGSize(width: widthPerItem, height: 112)
+        return CGSize(width: widthMonth, height: heightMonth)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
 
-        return UIEdgeInsets(
+        return UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 
-        //расстояние между строками и столбцами
-        return 10
+        return offsetCell
     }
 
     //MARK: - Header

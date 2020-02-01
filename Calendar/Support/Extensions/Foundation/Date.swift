@@ -10,6 +10,25 @@ import Foundation
 
 extension Date {
 
+    init(day: Int?, month: Int?, year: Int?) {
+
+        guard let day = day, let month = month, let year = year else {
+            self.init()
+        }
+
+        if month < 13, month > 0, day > 0, year > 0, let date = "\(day) \(month) \(year)".getDatwToString("dd MM yyyy") {
+            self.init(timeInterval: 0, since: date)
+        }
+
+        self.init()
+    }
+
+    init(day: String, month: String, year: String) {
+        self.init(day: Int(day), month: Int(month), year: Int(year))
+    }
+
+
+
     func printDate(format: String = "d MMMM yyyy") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format

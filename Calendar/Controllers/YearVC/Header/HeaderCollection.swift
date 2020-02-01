@@ -12,7 +12,12 @@ class HeaderCollection: UICollectionReusableView {
 
     @IBOutlet var labelYear: UILabel!
 
-    
+    var year: Year? {
+        didSet{
+            let text = year?.numberYear ?? Date().year
+            labelYear.text = "\(text)"
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

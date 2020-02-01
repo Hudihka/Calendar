@@ -11,14 +11,11 @@
 		CE63846E23E40A5A00D66538 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63846C23E40A5A00D66538 /* Main.storyboard */; };
 		CE63847023E40A5C00D66538 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE63846F23E40A5C00D66538 /* Assets.xcassets */; };
 		CE63847323E40A5C00D66538 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63847123E40A5C00D66538 /* LaunchScreen.storyboard */; };
-<<<<<<< HEAD
+		CEAD1E3A23E446910097CEB0 /* SupportCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */; };
 		CEAD1E3D23E592E60097CEB0 /* YearsMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3B23E592E60097CEB0 /* YearsMonthCell.swift */; };
 		CEAD1E3E23E592E60097CEB0 /* YearsMonthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD1E3C23E592E60097CEB0 /* YearsMonthCell.xib */; };
 		CEAD1E4123E5930A0097CEB0 /* YearsDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */; };
 		CEAD1E4223E5930A0097CEB0 /* YearsDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */; };
-=======
-		CEAD1E3A23E446910097CEB0 /* SupportCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */; };
->>>>>>> development/supportDataUpdate
 		CEBAC2F523E40BDA00F0478D /* ApplicationOpportunities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2DA23E40BD900F0478D /* ApplicationOpportunities.swift */; };
 		CEBAC2F623E40BDA00F0478D /* SupportNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2DB23E40BD900F0478D /* SupportNotification.swift */; };
 		CEBAC2F723E40BDA00F0478D /* Constats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2DC23E40BDA00F0478D /* Constats.swift */; };
@@ -43,6 +40,7 @@
 		CEBAC30C23E40BDA00F0478D /* Vibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2F423E40BDA00F0478D /* Vibro.swift */; };
 		CEBAC30E23E412EA00F0478D /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC30D23E412EA00F0478D /* UICollectionView.swift */; };
 		CEBAC31123E418C600F0478D /* YearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC31023E418C600F0478D /* YearViewController.swift */; };
+		CED8B25123E59E22005DDBCF /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8B25023E59E22005DDBCF /* DateParser.swift */; };
 		CEEE50AA23E5997900504F2B /* HeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE50A823E5997900504F2B /* HeaderCollection.swift */; };
 		CEEE50AB23E5997900504F2B /* HeaderCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEE50A923E5997900504F2B /* HeaderCollection.xib */; };
 /* End PBXBuildFile section */
@@ -54,14 +52,11 @@
 		CE63846F23E40A5C00D66538 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE63847223E40A5C00D66538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE63847423E40A5C00D66538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
+		CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCalendar.swift; sourceTree = "<group>"; };
 		CEAD1E3B23E592E60097CEB0 /* YearsMonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsMonthCell.swift; sourceTree = "<group>"; };
 		CEAD1E3C23E592E60097CEB0 /* YearsMonthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearsMonthCell.xib; sourceTree = "<group>"; };
 		CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsDayCell.swift; sourceTree = "<group>"; };
 		CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearsDayCell.xib; sourceTree = "<group>"; };
-=======
-		CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCalendar.swift; sourceTree = "<group>"; };
->>>>>>> development/supportDataUpdate
 		CEBAC2DA23E40BD900F0478D /* ApplicationOpportunities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationOpportunities.swift; sourceTree = "<group>"; };
 		CEBAC2DB23E40BD900F0478D /* SupportNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportNotification.swift; sourceTree = "<group>"; };
 		CEBAC2DC23E40BDA00F0478D /* Constats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constats.swift; sourceTree = "<group>"; };
@@ -86,6 +81,7 @@
 		CEBAC2F423E40BDA00F0478D /* Vibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibro.swift; sourceTree = "<group>"; };
 		CEBAC30D23E412EA00F0478D /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		CEBAC31023E418C600F0478D /* YearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewController.swift; sourceTree = "<group>"; };
+		CED8B25023E59E22005DDBCF /* DateParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
 		CEEE50A823E5997900504F2B /* HeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollection.swift; sourceTree = "<group>"; };
 		CEEE50A923E5997900504F2B /* HeaderCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollection.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,7 +153,7 @@
 				CEBAC2DC23E40BDA00F0478D /* Constats.swift */,
 				CEBAC2DB23E40BD900F0478D /* SupportNotification.swift */,
 				CEBAC2F423E40BDA00F0478D /* Vibro.swift */,
-				CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */,
+				CED8B25223E59E26005DDBCF /* CalendarSupport */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -221,6 +217,15 @@
 				CEAD1E4323E593370097CEB0 /* Cell */,
 			);
 			path = YearVC;
+			sourceTree = "<group>";
+		};
+		CED8B25223E59E26005DDBCF /* CalendarSupport */ = {
+			isa = PBXGroup;
+			children = (
+				CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */,
+				CED8B25023E59E22005DDBCF /* DateParser.swift */,
+			);
+			path = CalendarSupport;
 			sourceTree = "<group>";
 		};
 		CEEE50AC23E5998400504F2B /* Header */ = {
@@ -324,6 +329,7 @@
 				CEBAC2F623E40BDA00F0478D /* SupportNotification.swift in Sources */,
 				CEBAC30C23E40BDA00F0478D /* Vibro.swift in Sources */,
 				CEBAC30523E40BDA00F0478D /* Array.swift in Sources */,
+				CED8B25123E59E22005DDBCF /* DateParser.swift in Sources */,
 				CEBAC30723E40BDA00F0478D /* StringAndCrypto.swift in Sources */,
 				CEBAC30223E40BDA00F0478D /* UISegmentedControl.swift in Sources */,
 				CEBAC30A23E40BDA00F0478D /* Utils.swift in Sources */,

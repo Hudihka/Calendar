@@ -13,7 +13,7 @@ import UIKit
 struct Year {
 
     var numberYear: Int
-    var sizeCell: [CGSize]
+//    var sizeCell: [CGSize]
     var months: [Month] = []
 
     init(date: Date) {
@@ -30,23 +30,23 @@ struct Year {
 
         }
 
-        let arrayCoutLines = self.months.map({$0.countLines})
-
-        let one3Month = CGFloat(arrayCoutLines.prefix(3).max() ?? 5) * widthDayInMonth
-        let two3Month = CGFloat(arrayCoutLines[3..<5].max() ?? 5) * widthDayInMonth
-        let three3Month = CGFloat(arrayCoutLines[5..<7].max() ?? 5) * widthDayInMonth
-        let four3Month = CGFloat(arrayCoutLines.suffix(3).max() ?? 5) * widthDayInMonth
-
-        let sizeOne = CGSize(width: widthMonth, height: one3Month)
-        let sizeTwo = CGSize(width: widthMonth, height: two3Month)
-        let sizeThree = CGSize(width: widthMonth, height: three3Month)
-        let sizeFour = CGSize(width: widthMonth, height: four3Month)
-
-
-        sizeCell = [sizeOne, sizeOne, sizeOne,
-                    sizeTwo, sizeTwo, sizeTwo,
-                    sizeThree, sizeThree, sizeThree,
-                    sizeFour, sizeFour, sizeFour]
+//        let arrayCoutLines = self.months.map({$0.countLines})
+//
+//        let one3Month = CGFloat(arrayCoutLines.prefix(3).max() ?? 5) * widthDayInMonth
+//        let two3Month = CGFloat(arrayCoutLines[3..<5].max() ?? 5) * widthDayInMonth
+//        let three3Month = CGFloat(arrayCoutLines[5..<7].max() ?? 5) * widthDayInMonth
+//        let four3Month = CGFloat(arrayCoutLines.suffix(3).max() ?? 5) * widthDayInMonth
+//
+//        let sizeOne = CGSize(width: widthMonth, height: one3Month)
+//        let sizeTwo = CGSize(width: widthMonth, height: two3Month)
+//        let sizeThree = CGSize(width: widthMonth, height: three3Month)
+//        let sizeFour = CGSize(width: widthMonth, height: four3Month)
+//
+//
+//        sizeCell = [sizeOne, sizeOne, sizeOne,
+//                    sizeTwo, sizeTwo, sizeTwo,
+//                    sizeThree, sizeThree, sizeThree,
+//                    sizeFour, sizeFour, sizeFour]
 
 
 

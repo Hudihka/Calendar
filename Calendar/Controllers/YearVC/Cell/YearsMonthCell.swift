@@ -10,9 +10,20 @@ import UIKit
 
 class YearsMonthCell: UICollectionViewCell {
 
+    @IBOutlet weak var labelMonth: UILabel!
+
+    var month: Month? {
+        didSet{
+            let text = month?.nameMonth ?? Date().monthString
+            labelMonth.text = text
+        }
+    }
+
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
 }
