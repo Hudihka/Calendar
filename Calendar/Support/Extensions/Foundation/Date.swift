@@ -29,4 +29,79 @@ extension Date {
         }
     }
 
+    //количество дней в этом месяце
+
+    var countDayInMonth: Int {
+
+        let dateComponents = DateComponents(year: self.year, month: self.monthNumber)
+        let calendar = Calendar.current
+        let date = calendar.date(from: dateComponents)!
+
+        let range = calendar.range(of: .day, in: .month, for: date)!
+
+        return range.count
+
+    }
+
+
+    //КОЛИЧЕСТВО ПОЛНЫХ НЕДЕЛЬ
+
+    var weeksInMonth: Int {
+
+        let month = self.monthNumber
+        let year = self.year
+
+
+        let dateString = String(format: "%4d/%d/01", year, month)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        if let date = dateFormatter.date(from: dateString), let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian){
+            calendar.firstWeekday = 2 // Monday
+            let weekRange = calendar.range(of: .weekOfMonth, in: .month, for: date)
+            let weeksCount = weekRange.length
+            return weeksCount
+        } else {
+            return 5
+        }
+
+    }
+
+
+
+    var year: Int {
+        let str = self.printDate(format: "yyyy")
+        return Int(str)!
+    }
+
+    var day: Int {
+        let str = self.printDate(format: "d")
+        return Int(str)!
+    }
+
+    var monthString: String{
+        return self.printDate(format: "MMMM")
+    }
+
+    var monthNumber: Int{
+        let str = self.printDate(format: "M")
+        return Int(str)!
+    }
+
+    //номер дня в неделе
+    var nameDayMonth: Int {
+        return Int(self.printDate(format: "e"))!
+    }
+
+    //это выходной
+
+    var isWeekend: Bool {
+        return self.nameDayMonth > 5
+    }
+
+
+//    var isToDay: Bool{
+//        return Calendar.current.isDateInToday(self)
+//    }
+
+
 }
