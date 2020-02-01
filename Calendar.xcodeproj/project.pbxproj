@@ -39,6 +39,8 @@
 		CEBAC30C23E40BDA00F0478D /* Vibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2F423E40BDA00F0478D /* Vibro.swift */; };
 		CEBAC30E23E412EA00F0478D /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC30D23E412EA00F0478D /* UICollectionView.swift */; };
 		CEBAC31123E418C600F0478D /* YearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC31023E418C600F0478D /* YearViewController.swift */; };
+		CEEE50AA23E5997900504F2B /* HeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE50A823E5997900504F2B /* HeaderCollection.swift */; };
+		CEEE50AB23E5997900504F2B /* HeaderCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEE50A923E5997900504F2B /* HeaderCollection.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		CEBAC2F423E40BDA00F0478D /* Vibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibro.swift; sourceTree = "<group>"; };
 		CEBAC30D23E412EA00F0478D /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		CEBAC31023E418C600F0478D /* YearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewController.swift; sourceTree = "<group>"; };
+		CEEE50A823E5997900504F2B /* HeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollection.swift; sourceTree = "<group>"; };
+		CEEE50A923E5997900504F2B /* HeaderCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollection.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,9 +208,19 @@
 			isa = PBXGroup;
 			children = (
 				CEBAC31023E418C600F0478D /* YearViewController.swift */,
+				CEEE50AC23E5998400504F2B /* Header */,
 				CEAD1E4323E593370097CEB0 /* Cell */,
 			);
 			path = YearVC;
+			sourceTree = "<group>";
+		};
+		CEEE50AC23E5998400504F2B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				CEEE50A823E5997900504F2B /* HeaderCollection.swift */,
+				CEEE50A923E5997900504F2B /* HeaderCollection.xib */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +285,7 @@
 				CEAD1E3E23E592E60097CEB0 /* YearsMonthCell.xib in Resources */,
 				CEAD1E4223E5930A0097CEB0 /* YearsDayCell.xib in Resources */,
 				CE63847023E40A5C00D66538 /* Assets.xcassets in Resources */,
+				CEEE50AB23E5997900504F2B /* HeaderCollection.xib in Resources */,
 				CE63846E23E40A5A00D66538 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +299,7 @@
 			files = (
 				CEBAC2F823E40BDA00F0478D /* UIScrollView.swift in Sources */,
 				CEBAC30923E40BDA00F0478D /* NSObject.swift in Sources */,
+				CEEE50AA23E5997900504F2B /* HeaderCollection.swift in Sources */,
 				CEBAC2FD23E40BDA00F0478D /* UITextField.swift in Sources */,
 				CEBAC30123E40BDA00F0478D /* UILabel.swift in Sources */,
 				CEAD1E4123E5930A0097CEB0 /* YearsDayCell.swift in Sources */,

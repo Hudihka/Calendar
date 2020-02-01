@@ -16,8 +16,8 @@ class YearViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView.baseSettingsCV(obj: self, arrayNameCell: ["YearsMonthCell"])
-        
+        self.collectionView.baseSettingsCV(obj: self, arrayNameCell: ["YearsMonthCell", "HeaderCollection"])
+
     }
 
 
@@ -61,7 +61,17 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         return 10
     }
 
+    //MARK: - Header
 
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
 
+        if kind == "HeaderCollection" {
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollection", for: indexPath)
+            return view
+        }
+
+    }
 
 }
