@@ -65,9 +65,11 @@ struct Month {
     var nameMonth: String
 
     var offset: Int = 0 //отступ для первого дня
+    var date:Date
 
 
     init(date: Date, year: Int, numberMonth: Int) {
+        self.date = date
         self.countLines = date.weeksInMonth
         self.nameMonth = date.monthString
 
