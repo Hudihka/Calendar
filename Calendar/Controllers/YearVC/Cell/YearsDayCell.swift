@@ -10,9 +10,30 @@ import UIKit
 
 class YearsDayCell: UICollectionViewCell {
 
+
+    @IBOutlet weak var labelDay: UILabel!
+
+    var day: Day? {
+        didSet{
+            desingView()
+        }
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+
+
+
+    private func desingView(){
+
+        guard let day = day else {
+            return
+        }
+
+        labelDay.text = "\(day.numberMonth)"
+
     }
 
 }

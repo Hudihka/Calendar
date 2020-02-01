@@ -64,11 +64,8 @@ struct Month {
 
     var nameMonth: String
 
-    var offset: Int = 1 //отступ для первого дня
+    var offset: Int = 0 //отступ для первого дня
 
-    var countCell: Int {
-        return days.count + offset
-    }
 
     init(date: Date, year: Int, numberMonth: Int) {
         self.countLines = date.weeksInMonth
@@ -80,7 +77,7 @@ struct Month {
             let dateDay = DateComponents(calendar: calendar, year: year, month: numberMonth, day: i).date!
 
             if i == 1 {
-                self.offset = dateDay.nameDayMonth
+                self.offset = dateDay.nameDayMonth - 1
             }
             self.days.append(Day(date: dateDay, calendar: calendar, numberMonth: i))
         }

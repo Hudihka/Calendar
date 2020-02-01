@@ -38,7 +38,10 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YearsMonthCell", for: indexPath) as! YearsMonthCell
-        cell.month = years[indexPath.section].months[indexPath.row]
+
+        let month = years[indexPath.section].months[indexPath.row]
+
+        cell.desingCell(month: month)
 
         return cell
     }

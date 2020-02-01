@@ -81,4 +81,5 @@ let widthDay = (wDdevice - (2 * offsetCV)) / 7
 //MARK: - Colors
 
 
-
+let colorDay = UIColor.black
+let colorWekend = UIColor.red

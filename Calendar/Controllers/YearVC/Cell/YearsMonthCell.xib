@@ -22,7 +22,7 @@
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="geH-d5-hei">
                         <rect key="frame" x="0.0" y="30" width="330" height="220"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FEl-hl-kvX">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="FEl-hl-kvX">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -54,6 +54,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="330" height="250"/>
             <connections>
+                <outlet property="collectionView" destination="geH-d5-hei" id="9bW-Wf-OTK"/>
                 <outlet property="labelMonth" destination="c0q-yx-AMp" id="T8S-c3-WDj"/>
             </connections>
             <point key="canvasLocation" x="107.2" y="138.53073463268368"/>
