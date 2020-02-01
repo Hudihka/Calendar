@@ -7,29 +7,52 @@
 //
 
 import Foundation
+import UIKit
 
 
-struct DateCalendar {
-    var year: UInt
-    var day: UInt
+struct Year {
 
-    var monthInt: UInt
-    var monthString: String
+    var numberYear: Int
+    var sizeCell: [CGSize]
+    var months: [Month] = []
 
-    var weekDay: UInt
+    init(date: Date) {
+        self.numberYear = date.year
 
-    var date: Date
+        let calendar = Calendar.current
 
-    init(date: Date){
-        self.date = date
+        for i in 1...12{
+            let dateMonth = DateComponents(calendar: calendar, year: self.numberYear, month: i).date!
 
-        self.year        = UInt(date.printDate(format: "yyyy")) ?? 2020
-        self.monthInt    = UInt(date.printDate(format: "M")) ?? 1
-        self.day         = UInt(date.printDate(format: "d")) ?? 1
-        self.weekDay     = UInt(date.printDate(format: "e")) ?? 1
+            let month = Month(date: dateMonth, year: self.numberYear, numberMonth: i)
 
-        self.monthString = date.printDate(format: "MMMM")
+            self.months.append(month)
+
+        }
+
+        let arrayCoutLines = self.months.map({$0.countLines})
+
+        let one3Month = CGFloat(arrayCoutLines.prefix(3).max() ?? 5) * widthDayInMonth
+        let two3Month = CGFloat(arrayCoutLines[3..<5].max() ?? 5) * widthDayInMonth
+        let three3Month = CGFloat(arrayCoutLines[5..<7].max() ?? 5) * widthDayInMonth
+        let four3Month = CGFloat(arrayCoutLines.suffix(3).max() ?? 5) * widthDayInMonth
+
+        let sizeOne = CGSize(width: widthMonth, height: one3Month)
+        let sizeTwo = CGSize(width: widthMonth, height: two3Month)
+        let sizeThree = CGSize(width: widthMonth, height: three3Month)
+        let sizeFour = CGSize(width: widthMonth, height: four3Month)
+
+
+        sizeCell = [sizeOne, sizeOne, sizeOne,
+                    sizeTwo, sizeTwo, sizeTwo,
+                    sizeThree, sizeThree, sizeThree,
+                    sizeFour, sizeFour, sizeFour]
+
+
+
     }
+
+
 }
 
 
@@ -37,18 +60,31 @@ struct DateCalendar {
 struct Month {
 
     var countLines: Int
+    var days: [Day] = []
+
+    var nameMonth: String
+
+    var offset: Int = 1 //отступ для первого дня
 
     var countCell: Int {
-        let c = countLines * 7
-        return c - 1
+        return days.count + offset
     }
 
+    init(date: Date, year: Int, numberMonth: Int) {
+        self.countLines = date.weeksInMonth
+        self.nameMonth = date.monthString
 
+        let calendar = Calendar.current
 
-    var date: Date
+        for i in 1...date.countDayInMonth{
+            let dateDay = DateComponents(calendar: calendar, year: year, month: numberMonth, day: i).date!
 
-
-
+            if i == 1 {
+                self.offset = dateDay.nameDayMonth
+            }
+            self.days.append(Day(date: dateDay, calendar: calendar, numberMonth: i))
+        }
+    }
 
 }
 
@@ -56,34 +92,17 @@ struct Month {
 struct Day {
 
     var isWeekend    : Bool
+    var isTooday     : Bool
+
     var numberWeekDay: Int
     var numberMonth  : Int
 
-    init(date: Date) {
-        self.numberWeekDay = Int(date.printDate(format: "d")) ?? 1
-        self.numberMonth   = Int(date.printDate(format: "e")) ?? 1
+    init(date: Date, calendar: Calendar, numberMonth: Int) {
+        self.numberWeekDay = date.weeksInMonth
+        self.numberMonth   = numberMonth
 
-        self.isWeekend     = self.numberMonth > 5
+        self.isTooday      = calendar.isDateInToday(date)
+        self.isWeekend     = calendar.isDateInWeekend(date)
     }
 }
 
-
-
-
-
-//func weeksInMonth(month: Int, forYear year: Int) -> Int? {
-//
-//    if (month < 1 || month > 12) { return nil }
-//
-//    let dateString = String(format: "%4d/%d/01", year, month)
-//    let dateFormatter = DateFormatter()
-//    dateFormatter.dateFormat = "yyyy/MM/dd"
-//    if let date = dateFormatter.date(from: dateString), let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian){
-//        calendar.firstWeekday = 2 // Monday
-//        let weekRange = calendar.range(of: .weekOfMonth, in: .month, for: date)
-//        let weeksCount = weekRange.length
-//        return weeksCount
-//    } else {
-//        return nil
-//    }
-//}

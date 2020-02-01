@@ -62,6 +62,20 @@ var heightTabBar: CGFloat {
     return isIPhoneXorXmax ? 84 : 58
 }
 
+//MARK: - Calendar
+
+//Коллекшен вью с годами
+let offsetCV: CGFloat   = 5
+let offsetCell: CGFloat = 5
+
+let widthMonth = (wDdevice - (2 * offsetCV) - (6 * offsetCell)) / 3
+let widthDayInMonth = widthMonth / 7
+
+//Коллекшен вью с месяцами
+
+let widthDay = (wDdevice - (2 * offsetCV)) / 7
+
+
 //MARK: - Colors
 
 
