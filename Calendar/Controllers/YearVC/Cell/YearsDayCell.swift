@@ -29,11 +29,12 @@ class YearsDayCell: UICollectionViewCell {
     private func desingView(){
 
         guard let day = day else {
+            labelDay.text = ""
             return
         }
 
         labelDay.text = "\(day.numberMonth)"
-
+        labelDay.alpha = day.isDiapazone ? 1 : 0.3
     }
 
 }

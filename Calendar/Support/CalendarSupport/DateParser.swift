@@ -12,8 +12,8 @@ class DateParser {
 
     static let shared = DateParser()
 
-    var dateFrom: Date? = Date(day: 1, month: 1, year: 2019)
-    var dateTo: Date? = Date(day: 1, month: 1, year: 2023)
+    var dateFrom: Date? = Date(day: 1, month: 2, year: 2019)
+    var dateTo: Date? = Date(day: 10, month: 6, year: 2023)
     
     
     private let countSeconds: Double = 100000

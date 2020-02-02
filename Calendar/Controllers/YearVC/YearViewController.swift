@@ -17,10 +17,21 @@ class YearViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //        self.collectionView.baseSettingsCV(obj: self,
+        //                                           arrayNameCell: ["YearsMonthCell"],
+        //                                           arrayNameHeders: ["HeaderCollection"])
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
 
-        self.collectionView.baseSettingsCV(obj: self,
-                                           arrayNameCell: ["YearsMonthCell"],
-                                           arrayNameHeders: ["HeaderCollection"])
+        
+        self.collectionView.register(UINib(nibName: "YearsMonthCell", bundle: nil),
+                                     forCellWithReuseIdentifier: "YearsMonthCell")
+        
+        self.collectionView.register(UINib(nibName: "HeaderCollection", bundle: nil),
+                                    forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                    withReuseIdentifier: "HeaderCollection");
     }
 
 
@@ -44,6 +55,10 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         cell.desingCell(month: month)
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        p
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

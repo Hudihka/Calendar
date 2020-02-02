@@ -31,6 +31,8 @@ class YearsMonthCell: UICollectionViewCell {
 
         let text = month.nameMonth
         labelMonth.text = text
+        labelMonth.alpha = month.isDiapazone ? 1 : 0.3
+        
 
         arrayDay = month.days
         offset = month.offset
@@ -52,6 +54,7 @@ extension YearsMonthCell: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         let ind = indexPath.row
 
         if offset != 0, ind < offset {
+            cell.day = nil
             return cell
         }
 
