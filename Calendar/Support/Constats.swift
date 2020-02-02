@@ -72,10 +72,12 @@ let widthMonth = (wDdevice - (2 * offsetCV) - (6 * offsetCell)) / 3
 let widthDayInMonth = widthMonth / 7
 let heightMonth = (widthDayInMonth * 6.5) + 30 //30 высота лейбла
 
-
 //Коллекшен вью с месяцами
 
-let widthDay = (wDdevice - (2 * offsetCV)) / 7
+let widthWeek = wDdevice - (2 * offsetCV)
+let widthDay  = widthWeek / 7
+
+//
 
 
 //MARK: - Colors

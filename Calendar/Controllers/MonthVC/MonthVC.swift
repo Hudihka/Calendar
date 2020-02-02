@@ -12,19 +12,23 @@ class MonthVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var month: [MonthVC] = []
+    var month: [Month] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        self.collectionView.baseSettingsCV(obj: self,
+                                           arrayNameCell: ["YearsMonthCell"],
+                                           arrayNameHeders: ["HeaderCollection"])
         
     }
     
-    static func route() -> MonthVC{
+    static func route(month: [Month]) -> MonthVC{
         
         let stor = UIStoryboard(name: "Main", bundle: nil)
         let VC = stor.instantiateViewController(withIdentifier: "MonthVC") as! MonthVC
+        
+        VC.month = month
         
         return VC
     }
@@ -37,20 +41,27 @@ class MonthVC: UIViewController {
 extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return years.count
+        return month.count
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        let mon = month[section]
+        return mon.days.count + mon.offset
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YearsMonthCell", for: indexPath) as! YearsMonthCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YearsDayCell", for: indexPath) as! YearsDayCell
 
-        let month = years[indexPath.section].months[indexPath.row]
+        let ind = indexPath.row
+        let mon = month[indexPath.section]
+        let offset = mon.offset
 
-        cell.desingCell(month: month)
+        if offset != 0, ind < offset {
+            return cell
+        }
 
+        cell.day = mon.days[ind - offset]
+        
         return cell
     }
     
@@ -64,8 +75,10 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        return CGSize(width: widthMonth, height: heightMonth)
+        
+        let weekCount = CGFloat(month[indexPath.section].countLines) + 0.5
+        
+        return CGSize(width: widthWeek, height: weekCount * widthDay)
     }
 
 
@@ -82,8 +95,8 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
 
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollection", for: indexPath) as! HeaderCollection
-        view.year = years[indexPath.section]
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "MonthHeader", for: indexPath) as! MonthHeader
+        view.month = month[indexPath.section]
         return view
 
     }

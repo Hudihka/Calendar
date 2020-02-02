@@ -16,13 +16,13 @@ class DateParser {
     var dateTo: Date? = Date(day: 1, month: 1, year: 2023)
     
     
-    private let countSeconds: Double = 3600 * 10 * 365
+    private let countSeconds: Double = 100000
     
-    private var customFrom: Date {
+    var customFrom: Date {
         return dateFrom ?? Date(timeInterval: -1 * (countSeconds), since: Date())
     }
     
-    private var customTo: Date {
+    var customTo: Date {
         return dateTo ?? Date(timeInterval: countSeconds, since: Date())
     }
     
@@ -46,32 +46,21 @@ class DateParser {
         return years
     }
     
-    var arrayMonth: [Year] {
+    var arrayMonth: [Month] {
 
         if customFrom > customTo {
             return []
         }
 
-        let calendar = Calendar.current
-        var years: [Month] = []
-        
-        
+        var month: [Month] = []
 
-        for i in customFrom.year...customTo.year{
-            if let dateYear = DateComponents(calendar: calendar, year: i).date {
-                let year = Year(date: dateYear)
-                years.append(year)
-            }
+        for obj in self.arrayYears {
+            let montArray = obj.months.filter({$0.isDiapazone})
+            month += montArray
         }
 
-        return years
+        return month
     }
     
     
-    
-
-
-
-
-
 }

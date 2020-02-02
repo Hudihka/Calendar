@@ -65,11 +65,11 @@ struct Month {
     var nameMonth: String
 
     var offset: Int = 0 //отступ для первого дня
-    var date:Date
 
+    var isDiapazone = false //есть хоть один день в этом месяце что в диапазоне возможных дат
+    
 
     init(date: Date, year: Int, numberMonth: Int) {
-        self.date = date
         self.countLines = date.weeksInMonth
         self.nameMonth = date.monthString
 
@@ -83,6 +83,11 @@ struct Month {
             }
             self.days.append(Day(date: dateDay, calendar: calendar, numberMonth: i))
         }
+        
+        if days.first(where: {$0.isDiapazone}) != nil {
+            self.isDiapazone = true
+        }
+        
     }
 
 }
@@ -96,16 +101,25 @@ struct Day {
     var numberWeekDay: Int
     var numberMonth  : Int
     
-    var date         :Date
+//    var date         :Date
+    
+    var isDiapazone = false
 
     init(date: Date, calendar: Calendar, numberMonth: Int) {
-        self.date          = date
+//        self.date          = date
+        
+        let dParser = DateParser.shared
         
         self.numberWeekDay = date.weeksInMonth
         self.numberMonth   = numberMonth
 
         self.isTooday      = calendar.isDateInToday(date)
         self.isWeekend     = calendar.isDateInWeekend(date)
+        
+        if date >= dParser.customFrom, date <= dParser.customTo {
+            self.isDiapazone = true
+        }
+        
     }
 }
 
