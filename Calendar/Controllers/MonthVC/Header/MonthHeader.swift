@@ -14,6 +14,9 @@ class MonthHeader: UICollectionReusableView {
     
     var month: Month? {
         didSet{
+            
+            collectionLabels.forEach({$0.text = nil})
+            
             if let month = month {
                 let label = collectionLabels[month.offset]
                 label.text = month.nameMonth
@@ -24,7 +27,6 @@ class MonthHeader: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        collectionLabels.forEach({$0.text = nil})
     }
     
 }

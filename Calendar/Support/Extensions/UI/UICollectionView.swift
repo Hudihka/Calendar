@@ -25,12 +25,8 @@ extension UICollectionView{
         //  скорость с которой движУТся ячейки
         //  collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
 
-//        self.allowsSelection = clicableCell
+        self.allowsSelection = clicableCell
         
-//        if clicableCell {
-//            self.conisUserInteractionEnabled = true
-//        }
-
         arrayNameCell?.forEach({ (cellName) in
             self.register(UINib(nibName: cellName, bundle: nil),
                                 forCellWithReuseIdentifier: cellName)

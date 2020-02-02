@@ -18,8 +18,8 @@ class MonthVC: UIViewController {
         super.viewDidLoad()
 
         self.collectionView.baseSettingsCV(obj: self,
-                                           arrayNameCell: ["YearsMonthCell"],
-                                           arrayNameHeders: ["HeaderCollection"])
+                                           arrayNameCell: ["YearsDayCell"],
+                                           arrayNameHeders: ["MonthHeader"])
         
     }
     
@@ -50,6 +50,7 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+ 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YearsDayCell", for: indexPath) as! YearsDayCell
 
         let ind = indexPath.row
@@ -57,11 +58,12 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
         let offset = mon.offset
 
         if offset != 0, ind < offset {
+            cell.day = nil
             return cell
         }
 
         cell.day = mon.days[ind - offset]
-        
+
         return cell
     }
     
@@ -70,15 +72,14 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     }
 
 
-    //size
+//    size
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let weekCount = CGFloat(month[indexPath.section].countLines) + 0.5
         
-        return CGSize(width: widthWeek, height: weekCount * widthDay)
+        return CGSize(width: widthDay, height: widthDay)
     }
 
 
