@@ -38,19 +38,26 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         
-        cell.contentView.backgroundColor = UIColor.red
-        
-        
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YearsMonthCell", for: indexPath) as! YearsMonthCell
-//
-//        let month = years[indexPath.section].months[indexPath.row]
-//
-//        cell.desingCell(month: month)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YearsMonthCell", for: indexPath) as! YearsMonthCell
+        //
+        let month = years[indexPath.section].months[indexPath.row]
+
+        cell.desingCell(month: month)
 
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let cvCell = cell as? YearsMonthCell {
+
+            cvCell.setCollectionViewDataSourceDelegate(cvCell)
+            cvCell.collectionViewOffset = 0
+
+        }
+    }
+
+
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -75,12 +82,12 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         return CGSize(width: widthMonth, height: heightMonth)
     }
 
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        insetForSectionAt section: Int) -> UIEdgeInsets {
-//
-//        return UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
-//    }
+    //    func collectionView(_ collectionView: UICollectionView,
+    //                        layout collectionViewLayout: UICollectionViewLayout,
+    //                        insetForSectionAt section: Int) -> UIEdgeInsets {
+    //
+    //        return UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
+    //    }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

@@ -28,19 +28,22 @@ extension UICollectionView{
         self.allowsSelection = clicableCell
         
         arrayNameCell?.forEach({ (cellName) in
-            self.register(UINib(nibName: cellName, bundle: nil),
-                                forCellWithReuseIdentifier: cellName)
+            self.registerCell(cellName: cellName)
         })
 
         arrayNameHeders?.forEach({ (header) in
-            self.register(UINib(nibName: header, bundle: nil),
-                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: header);
+            self.registerHeader(headerName: header)
         })
+    }
 
+    func registerCell(cellName: String){
+        self.register(UINib(nibName: cellName, bundle: nil), forCellWithReuseIdentifier: cellName)
+    }
 
-
-
+    func registerHeader(headerName: String){
+        self.register(UINib(nibName: headerName, bundle: nil),
+                      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                      withReuseIdentifier: headerName);
     }
 
 

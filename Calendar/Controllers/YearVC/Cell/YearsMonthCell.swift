@@ -13,21 +13,36 @@ class YearsMonthCell: UICollectionViewCell {
     @IBOutlet weak var labelMonth: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var arrayDay: [Day] = []
-    var offset: Int = 0
+        var arrayDay: [Day] = []
+        var offset: Int = 0
 
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        collectionView.baseSettingsCV(obj: self,
-                                      scrollEnabled: false,
-                                      clicableCell: false,
-                                      arrayNameCell: ["YearsDayCell"])
-
     }
 
-    func desingCell(month: Month){
+    func setCollectionViewDataSourceDelegate<D: UICollectionViewDelegateFlowLayout & UICollectionViewDataSource>(_ dataSourceDelegate: D) {
+
+        collectionView.registerCell(cellName: "YearsDayCell")
+
+        collectionView.delegate = dataSourceDelegate
+        collectionView.dataSource = dataSourceDelegate
+        collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.setContentOffset(collectionView.contentOffset, animated: false)
+
+        collectionView.allowsSelection = false
+//        collectionView.reloadData()
+    }
+
+    var collectionViewOffset: CGFloat {
+        set { collectionView.contentOffset.x = newValue }
+        get { return collectionView.contentOffset.x }
+    }
+
+
+   func desingCell(month: Month){
 
         let text = month.nameMonth
         labelMonth.text = text

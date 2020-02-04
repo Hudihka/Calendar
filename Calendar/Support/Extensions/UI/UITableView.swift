@@ -62,12 +62,16 @@ extension UITableView {
         }
 
         arrayNameCell?.forEach({ (cellName) in
-            self.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+            self.registerCell(cellName: cellName)
         })
 
 
     }
 
+
+    func registerCell(cellName: String){
+        self.register(UINib(nibName: cellName, bundle: nil), forCellReuseIdentifier: cellName)
+    }
 
 }
 
