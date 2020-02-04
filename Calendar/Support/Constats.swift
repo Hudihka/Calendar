@@ -65,8 +65,8 @@ var heightTabBar: CGFloat {
 //MARK: - Calendar
   
 //Коллекшен вью с годами
-let offsetCV: CGFloat   = 0
-let offsetCell: CGFloat = 0
+let offsetCV: CGFloat   = 3
+let offsetCell: CGFloat = 3
 
 let widthMonth = (wDdevice - (2 * offsetCV) - (6 * offsetCell)) / 3
 let widthDayInMonth = widthMonth / 7

@@ -21,7 +21,9 @@ class YearViewController: UIViewController {
                 self.collectionView.baseSettingsCV(obj: self,
                                                    arrayNameCell: ["YearsMonthCell"],
                                                    arrayNameHeders: ["HeaderCollection"])
-        
+
+
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
     }
 
 
@@ -82,12 +84,6 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         return CGSize(width: widthMonth, height: heightMonth)
     }
 
-    //    func collectionView(_ collectionView: UICollectionView,
-    //                        layout collectionViewLayout: UICollectionViewLayout,
-    //                        insetForSectionAt section: Int) -> UIEdgeInsets {
-    //
-    //        return UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
-    //    }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

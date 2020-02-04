@@ -21,6 +21,8 @@ class MonthVC: UIViewController {
                                            arrayNameCell: ["YearsDayCell"],
                                            arrayNameHeders: ["MonthHeader"])
         
+         collectionView.contentInset = UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
+        
     }
     
     static func route(month: [Month]) -> MonthVC{
