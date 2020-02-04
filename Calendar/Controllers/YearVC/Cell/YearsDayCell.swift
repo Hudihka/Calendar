@@ -35,6 +35,13 @@ class YearsDayCell: UICollectionViewCell {
 
         labelDay.text = "\(day.numberMonth)"
         labelDay.alpha = day.isDiapazone ? 1 : 0.3
+
+        labelDay.textColor = day.isWeekend ? UIColor.red : UIColor.black
+
+        let size: CGFloat = UIApplication.shared.workVC is YearViewController ? 9 : 18
+        let weight = !day.isTooday ? UIFont.Weight.medium : UIFont.Weight.bold
+
+        labelDay.font = UIFont.systemFont(ofSize: size, weight: weight)
     }
 
 }

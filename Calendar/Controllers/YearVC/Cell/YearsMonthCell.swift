@@ -26,6 +26,8 @@ class YearsMonthCell: UICollectionViewCell {
 
         collectionView.registerCell(cellName: "YearsDayCell")
 
+        collectionView.isUserInteractionEnabled = true
+
         collectionView.delegate = dataSourceDelegate
         collectionView.dataSource = dataSourceDelegate
         collectionView.decelerationRate = UIScrollView.DecelerationRate.fast

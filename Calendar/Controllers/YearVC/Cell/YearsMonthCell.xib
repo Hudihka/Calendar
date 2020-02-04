@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,14 +38,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZM-bA-M72">
+                        <rect key="frame" x="0.0" y="30" width="330" height="220"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="c0q-yx-AMp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ASU-TH-nFh"/>
+                <constraint firstAttribute="trailing" secondItem="IZM-bA-M72" secondAttribute="trailing" id="Ebm-BZ-6Tm"/>
                 <constraint firstItem="geH-d5-hei" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HPs-s6-zBB"/>
+                <constraint firstItem="IZM-bA-M72" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IPI-Ad-7rd"/>
                 <constraint firstAttribute="bottom" secondItem="geH-d5-hei" secondAttribute="bottom" id="Kde-gy-5ZN"/>
                 <constraint firstItem="c0q-yx-AMp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MTS-JC-Ar3"/>
                 <constraint firstAttribute="trailing" secondItem="geH-d5-hei" secondAttribute="trailing" id="T5R-6D-NDa"/>
+                <constraint firstAttribute="bottom" secondItem="IZM-bA-M72" secondAttribute="bottom" id="VpA-Nk-Bny"/>
+                <constraint firstItem="IZM-bA-M72" firstAttribute="top" secondItem="c0q-yx-AMp" secondAttribute="bottom" id="Yf0-4P-5g4"/>
                 <constraint firstItem="geH-d5-hei" firstAttribute="top" secondItem="c0q-yx-AMp" secondAttribute="bottom" id="dCq-7j-Jng"/>
                 <constraint firstAttribute="trailing" secondItem="c0q-yx-AMp" secondAttribute="trailing" id="dUI-n3-Yw5"/>
                 <constraint firstItem="c0q-yx-AMp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ffv-D8-cRa"/>
