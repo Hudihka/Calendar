@@ -13,10 +13,10 @@ import UIKit
 struct Year {
 
     var numberYear: Int
-//    var sizeCell: [CGSize]
     var months: [Month] = []
 
     init(date: Date) {
+
         self.numberYear = date.year
 
         let calendar = Calendar.current
@@ -29,27 +29,6 @@ struct Year {
             self.months.append(month)
 
         }
-
-//        let arrayCoutLines = self.months.map({$0.countLines})
-//
-//        let one3Month = CGFloat(arrayCoutLines.prefix(3).max() ?? 5) * widthDayInMonth
-//        let two3Month = CGFloat(arrayCoutLines[3..<5].max() ?? 5) * widthDayInMonth
-//        let three3Month = CGFloat(arrayCoutLines[5..<7].max() ?? 5) * widthDayInMonth
-//        let four3Month = CGFloat(arrayCoutLines.suffix(3).max() ?? 5) * widthDayInMonth
-//
-//        let sizeOne = CGSize(width: widthMonth, height: one3Month)
-//        let sizeTwo = CGSize(width: widthMonth, height: two3Month)
-//        let sizeThree = CGSize(width: widthMonth, height: three3Month)
-//        let sizeFour = CGSize(width: widthMonth, height: four3Month)
-//
-//
-//        sizeCell = [sizeOne, sizeOne, sizeOne,
-//                    sizeTwo, sizeTwo, sizeTwo,
-//                    sizeThree, sizeThree, sizeThree,
-//                    sizeFour, sizeFour, sizeFour]
-
-
-
     }
 
 
@@ -64,7 +43,7 @@ struct Month {
 
     var nameMonth: String
 
-    var offset: Int = 1 //отступ для первого дня
+    var offset: Int = 0 //отступ для первого дня
 
     var isDiapazone = false //есть хоть один день в этом месяце что в диапазоне возможных дат
     
@@ -75,12 +54,11 @@ struct Month {
 
         let calendar = Calendar.current
 
-        for i in 1...date.countDayInMonth{
+        for i in 1...date.countDayInMonth {
             let dateDay = DateComponents(calendar: calendar, year: year, month: numberMonth, day: i).date!
 
             if i == 1 {
-                                let value = dateDay.nameDayMonth
-                                self.offset = value
+               self.offset = dateDay.nameDayMonth - 1
             }
 
             self.days.append(Day(date: dateDay, calendar: calendar, numberMonth: i))
@@ -103,13 +81,13 @@ struct Day {
     var numberWeekDay: Int
     var numberMonth  : Int
     
-//    var date         :Date
-    
+    var date         :Date
+
     var isDiapazone = false
 
     init(date: Date, calendar: Calendar, numberMonth: Int) {
-//        self.date          = date
-        
+        self.date          = date
+
         let dParser = DateParser.shared
         
         self.numberWeekDay = date.weeksInMonth

@@ -39,9 +39,15 @@ class YearsDayCell: UICollectionViewCell {
         labelDay.textColor = day.isWeekend ? UIColor.red : UIColor.black
 
         let size: CGFloat = UIApplication.shared.workVC is YearViewController ? 9 : 18
-        let weight = !day.isTooday ? UIFont.Weight.medium : UIFont.Weight.bold
 
-        labelDay.font = UIFont.systemFont(ofSize: size, weight: weight)
+        labelDay.layer.borderColor = UIColor.clear.cgColor
+
+        labelDay.font = UIFont.systemFont(ofSize: size, weight: .medium)
+        if day.isTooday {
+            labelDay.cirkleView()
+            labelDay.layer.borderColor = UIColor.black.cgColor
+            labelDay.layer.borderWidth = 2
+        }
     }
 
 }
