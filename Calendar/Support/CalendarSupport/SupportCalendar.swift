@@ -64,7 +64,7 @@ struct Month {
 
     var nameMonth: String
 
-    var offset: Int = 1 //отступ для первого дня
+    var offset: Int = 0 //отступ для первого дня
 
     var isDiapazone = false //есть хоть один день в этом месяце что в диапазоне возможных дат
     
@@ -79,8 +79,7 @@ struct Month {
             let dateDay = DateComponents(calendar: calendar, year: year, month: numberMonth, day: i).date!
 
             if i == 1 {
-                                let value = dateDay.nameDayMonth
-                                self.offset = value
+               self.offset = dateDay.nameDayMonth - 1
             }
 
             self.days.append(Day(date: dateDay, calendar: calendar, numberMonth: i))

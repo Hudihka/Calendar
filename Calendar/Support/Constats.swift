@@ -65,10 +65,10 @@ var heightTabBar: CGFloat {
 //MARK: - Calendar
   
 //Коллекшен вью с годами
-let offsetCV: CGFloat   = 3
+let offsetCV: CGFloat   = 5
 let offsetCell: CGFloat = 3
 
-let widthMonth = (wDdevice - (2 * offsetCV) - (6 * offsetCell)) / 3
+let widthMonth = (wDdevice - (2 * offsetCV) - (4 * offsetCell)) / 3
 let widthDayInMonth = widthMonth / 7
 let heightMonth = (widthDayInMonth * 6.5) + 30 //30 высота лейбла
 
