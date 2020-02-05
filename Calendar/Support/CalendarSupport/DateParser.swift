@@ -45,6 +45,20 @@ class DateParser {
 
         return false
     }
+
+    func dateInDiapasonSelected(date: Date) -> Bool {
+        guard let selectedDataOne = selectedDataOne,
+            let selectedDataTwo = selectedDataTwo else {
+                return false
+        }
+
+
+        if selectedDataOne < date, date < selectedDataTwo {
+            return true
+        }
+
+        return false
+    }
     
 
     var arrayYears: [Year] {

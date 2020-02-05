@@ -82,7 +82,7 @@ class YearsDayCell: UICollectionViewCell {
             return
         }
 
-        if dataParser.dateInDiapason(date: date){
+        if dataParser.dateInDiapasonSelected(date: date){
             rightView.backgroundColor = selectedView
             leftView.backgroundColor = selectedView
         }
@@ -92,6 +92,10 @@ class YearsDayCell: UICollectionViewCell {
     private func settingsLabelSelected(from: Bool){
         labelDay.textColor = UIColor.white
         labelDay.backgroundColor = colorWekend
+
+        guard DateParser.shared.selectedDataTwo != nil, DateParser.shared.selectedDataOne != nil else {
+            return
+        }
 
         if from {
             rightView.backgroundColor = selectedView
