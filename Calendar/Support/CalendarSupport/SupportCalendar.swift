@@ -70,6 +70,10 @@ struct Month {
         
     }
 
+    func dateInIndex(index: IndexPath) -> Date? {
+        return days[safe: index.row]?.date
+    }
+
 }
 
 

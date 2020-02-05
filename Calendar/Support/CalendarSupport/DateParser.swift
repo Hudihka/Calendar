@@ -14,6 +14,18 @@ class DateParser {
 
     var dateFrom: Date? = Date(day: 1, month: 2, year: 2019)
     var dateTo: Date? = Date(day: 10, month: 6, year: 2023)
+
+    /*
+     если селектДата1 есть значение а селектДата2 нет
+     то дата 1 является конечной
+
+     если есть оба эти значения и пользаватель нажимает еще раз
+     эти оба значения сбрасываютя
+
+     */
+
+    var selectedDataOne: Date? = nil
+    var selectedDataTwo: Date? = nil
     
     
     private let countSeconds: Double = 100000
@@ -24,6 +36,14 @@ class DateParser {
     
     var customTo: Date {
         return dateTo ?? Date(timeInterval: countSeconds, since: Date())
+    }
+
+    func dateInDiapason(date: Date) -> Bool {
+        if customFrom <= date, date <= customTo {
+            return true
+        }
+
+        return false
     }
     
 
@@ -61,6 +81,26 @@ class DateParser {
 
         return month
     }
-    
+
+
+    func selectedDate(date: Date){
+
+        if selectedDataOne == nil, selectedDataTwo == nil {
+            selectedDataOne = date
+        } else if let selectOne = selectedDataOne, selectedDataTwo == nil {
+
+            if selectOne <= date {
+                selectedDataTwo = date
+            } else {
+                selectedDataTwo = selectOne
+                selectedDataOne = date
+            }
+
+
+        } else if selectedDataOne != nil, selectedDataTwo != nil {
+            selectedDataOne = nil
+            selectedDataTwo = nil
+        }
+    }
     
 }

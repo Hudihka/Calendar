@@ -15,6 +15,8 @@ class MonthVC: UIViewController {
 
     var month: [Month] = []
 
+    let dataParser = DateParser.shared
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +102,14 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        return
+
+        guard let date = month[indexPath.section].dateInIndex(index: indexPath),
+            dataParser.dateInDiapason(date: date) else {return}
+
+        dataParser.selectedDate(date: date)
+        self.collectionView.reloadData()
+
+
     }
 
 

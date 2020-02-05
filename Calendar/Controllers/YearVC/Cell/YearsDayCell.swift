@@ -32,6 +32,12 @@ class YearsDayCell: UICollectionViewCell {
 
     private func desingView(){
 
+        clearView()
+
+        guard let day = day else {
+            return
+        }
+
         let isYearsVC = UIApplication.shared.workVC is YearViewController
 
         //габариты лейбла
@@ -40,20 +46,13 @@ class YearsDayCell: UICollectionViewCell {
         constreintWidthCell.constant = sizeLabel
 
         labelDay.addRadius(number: sizeLabel * 0.5)
-
         labelDay.layer.borderWidth = isYearsVC ? 0.5 : 2
-
-        guard let day = day else {
-            labelDay.text = ""
-            labelDay.layer.borderColor = UIColor.clear.cgColor
-            return
-        }
 
 
         labelDay.text = "\(day.numberMonth)"
         labelDay.alpha = day.isDiapazone ? 1 : 0.3
 
-        labelDay.textColor = day.isWeekend ? UIColor.red : UIColor.black
+        labelDay.textColor = day.isWeekend ? colorWekend : colorDay
         
         //ширифт
 
@@ -62,9 +61,57 @@ class YearsDayCell: UICollectionViewCell {
 
         //округлениие вью
 
-        labelDay.layer.borderColor = day.isTooday ? UIColor.black.cgColor : UIColor.clear.cgColor
+        if day.isTooday {
+            labelDay.layer.borderColor = colorDay.cgColor
+        }
 
-        
+        selected(date: day.date)
+    }
+
+    private func selected(date: Date){
+
+        let dataParser = DateParser.shared
+
+        if let oneSelected = dataParser.selectedDataOne, oneSelected == date{
+            settingsLabelSelected(from: true)
+            return
+        }
+
+        if let twoSelected = dataParser.selectedDataTwo, twoSelected == date {
+            settingsLabelSelected(from: false)
+            return
+        }
+
+        if dataParser.dateInDiapason(date: date){
+            rightView.backgroundColor = selectedView
+            leftView.backgroundColor = selectedView
+        }
+
+    }
+
+    private func settingsLabelSelected(from: Bool){
+        labelDay.textColor = UIColor.white
+        labelDay.backgroundColor = colorWekend
+
+        if from {
+            rightView.backgroundColor = selectedView
+        } else {
+            leftView.backgroundColor = selectedView
+        }
+
+    }
+
+    private func clearView(){
+
+        labelDay.text = ""
+        labelDay.layer.borderColor = UIColor.clear.cgColor
+
+
+        labelDay.backgroundColor = UIColor.clear
+        labelDay.textColor = UIColor.black
+
+        leftView.backgroundColor = UIColor.clear
+        rightView.backgroundColor = UIColor.clear
     }
 
 }

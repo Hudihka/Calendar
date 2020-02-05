@@ -85,3 +85,6 @@ let widthDay  = widthWeek / 7
 
 let colorDay = UIColor.black
 let colorWekend = UIColor.red
+
+let selectedView = UIColor.red.withAlphaComponent(0.3)
+

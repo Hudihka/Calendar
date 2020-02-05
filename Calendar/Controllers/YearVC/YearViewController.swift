@@ -64,7 +64,6 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
         let allMonth = DateParser.shared.arrayMonth
         let VC = MonthVC.route(month: allMonth)
         self.buttonback("Года", vc: VC)
