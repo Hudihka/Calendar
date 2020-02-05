@@ -64,13 +64,10 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let month = years[indexPath.section].months[indexPath.row]
         
-        if month.isDiapazone {
-            let allMonth = DateParser.shared.arrayMonth
-            let VC = MonthVC.route(month: allMonth)
-            self.navigationController?.pushViewController(VC, animated: true)
-        }
+        let allMonth = DateParser.shared.arrayMonth
+        let VC = MonthVC.route(month: allMonth)
+        self.buttonback("Года", vc: VC)
         
     }
 

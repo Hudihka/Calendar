@@ -70,10 +70,12 @@ extension YearsMonthCell: UICollectionViewDelegateFlowLayout, UICollectionViewDa
 
         let ind = indexPath.row
 
-       if offset != 0, ind < offset {
-            cell.day = nil
-            return cell
-        }
+
+            if offset != 0, ind < offset {
+                cell.day = nil
+                return cell
+            }
+
 
         cell.day = arrayDay[ind - offset]
 

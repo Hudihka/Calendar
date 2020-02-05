@@ -12,7 +12,11 @@ class YearsDayCell: UICollectionViewCell {
 
 
     @IBOutlet weak var labelDay: UILabel!
-
+    @IBOutlet weak var constreintWidthCell: NSLayoutConstraint!
+    
+    @IBOutlet weak var leftView: UIView!
+    @IBOutlet weak var rightView: UIView!
+    
     var day: Day? {
         didSet{
             desingView()
@@ -28,20 +32,39 @@ class YearsDayCell: UICollectionViewCell {
 
     private func desingView(){
 
+        let isYearsVC = UIApplication.shared.workVC is YearViewController
+
+        //габариты лейбла
+
+        let sizeLabel = isYearsVC ? widthDayInMonth : 0.8 * widthDay
+        constreintWidthCell.constant = sizeLabel
+
+        labelDay.addRadius(number: sizeLabel * 0.5)
+
+        labelDay.layer.borderWidth = isYearsVC ? 0.5 : 2
+
         guard let day = day else {
             labelDay.text = ""
+            labelDay.layer.borderColor = UIColor.clear.cgColor
             return
         }
+
 
         labelDay.text = "\(day.numberMonth)"
         labelDay.alpha = day.isDiapazone ? 1 : 0.3
 
         labelDay.textColor = day.isWeekend ? UIColor.red : UIColor.black
+        
+        //ширифт
 
-        let size: CGFloat = UIApplication.shared.workVC is YearViewController ? 9 : 18
-        let weight = !day.isTooday ? UIFont.Weight.medium : UIFont.Weight.bold
+        let sizeFont: CGFloat = isYearsVC ? 9 : 18
+        labelDay.font = UIFont.systemFont(ofSize: sizeFont, weight: .medium)
 
-        labelDay.font = UIFont.systemFont(ofSize: size, weight: weight)
+        //округлениие вью
+
+        labelDay.layer.borderColor = day.isTooday ? UIColor.black.cgColor : UIColor.clear.cgColor
+
+        
     }
 
 }

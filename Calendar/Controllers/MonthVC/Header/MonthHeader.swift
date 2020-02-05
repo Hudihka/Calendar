@@ -10,16 +10,13 @@ import UIKit
 
 class MonthHeader: UICollectionReusableView {
     
-    @IBOutlet var collectionLabels: [UILabel]!
+    @IBOutlet var collectionLabels: UILabel!
     
     var month: Month? {
         didSet{
-            
-            collectionLabels.forEach({$0.text = nil})
-            
+            collectionLabels.text = nil
             if let month = month {
-                let label = collectionLabels[month.offset]
-                label.text = month.nameMonth
+                collectionLabels.text = month.nameMonth
             }
         }
     }
