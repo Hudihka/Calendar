@@ -9,6 +9,10 @@
 import UIKit
 import Foundation
 
+protocol ProtocolReloadDataTV: class{
+    func reloadDataTV()
+}
+
 class YearViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -66,6 +70,7 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
         
         let allMonth = DateParser.shared.arrayMonth
         let VC = MonthVC.route(month: allMonth)
+        VC.delegate = self
         self.buttonback("Года", vc: VC)
         
     }
@@ -100,4 +105,11 @@ extension YearViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
 
     }
 
+}
+
+
+extension YearViewController: ProtocolReloadDataTV {
+    func reloadDataTV() {
+        self.collectionView.reloadData()
+    }
 }

@@ -93,7 +93,9 @@ class YearsDayCell: UICollectionViewCell {
         labelDay.textColor = UIColor.white
         labelDay.backgroundColor = colorWekend
 
-        guard DateParser.shared.selectedDataTwo != nil, DateParser.shared.selectedDataOne != nil else {
+        guard let dataOne = DateParser.shared.selectedDataTwo,
+              let dataTwo = DateParser.shared.selectedDataOne,
+              dataOne != dataTwo else {
             return
         }
 

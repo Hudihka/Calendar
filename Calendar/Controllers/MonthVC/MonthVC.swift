@@ -10,6 +10,8 @@ import UIKit
 
 class MonthVC: UIViewController {
 
+    weak var delegate: ProtocolReloadDataTV?
+
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewYear: ViewYear!
 
@@ -108,7 +110,7 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
 
         dataParser.selectedDate(date: date)
         self.collectionView.reloadData()
-
+        self.delegate?.reloadDataTV()
 
     }
 
