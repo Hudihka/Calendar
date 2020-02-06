@@ -38,13 +38,42 @@ class DateParser {
         return dateTo ?? Date(timeInterval: countSeconds, since: Date())
     }
 
-    func dateInDiapason(date: Date) -> Bool {
+    func dateInDiapason(date: Date?) -> Bool {
+        guard let date = date else {
+            return false
+        }
+
         if customFrom <= date, date <= customTo {
             return true
         }
 
         return false
     }
+
+    //есть хотя бы один день месяца в диапазоне
+
+    func monthInDiapason(date: [Date]) -> Bool {
+        if dateInDiapason(date: date.first) || dateInDiapason(date: date.last) {
+            return true
+        }
+
+        return false
+    }
+
+    //есть ли в месяце день что идет сейчас
+
+    func monthInDayTooDay(date: [Date]) -> Bool {
+
+        let calendar = Calendar.current
+
+        if date.firstIndex(where: {calendar.isDateInToday($0)}) != nil {
+            return true
+        }
+
+        return false
+    }
+
+
 
     func dateInDiapasonSelected(date: Date) -> Bool {
         guard let selectedDataOne = selectedDataOne,

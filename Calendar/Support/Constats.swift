@@ -63,6 +63,8 @@ var heightTabBar: CGFloat {
 }
 
 //MARK: - Calendar
+
+let scrollInTooDay = true
   
 //Коллекшен вью с годами
 let offsetCV: CGFloat   = 5

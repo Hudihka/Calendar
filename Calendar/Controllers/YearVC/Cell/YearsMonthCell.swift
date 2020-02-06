@@ -46,11 +46,9 @@ class YearsMonthCell: UICollectionViewCell {
 
    func desingCell(month: Month){
 
-        let text = month.nameMonth
-        labelMonth.text = text
+        labelMonth.text = month.nameMonth
         labelMonth.alpha = month.isDiapazone ? 1 : 0.3
         
-
         arrayDay = month.days
         offset = month.offset
 

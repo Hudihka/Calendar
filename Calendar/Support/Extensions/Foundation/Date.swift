@@ -85,7 +85,6 @@ extension Date {
         } else {
             return 5
         }
-
     }
 
 
@@ -145,10 +144,13 @@ extension Date {
         return self.nameDayMonth > 5
     }
 
+    //получение всех дней в месяце
 
-//    var isToDay: Bool{
-//        return Calendar.current.isDateInToday(self)
-//    }
+    func daysArrayDate(yerar: Int, month: Int) -> [Date]{
+        let array: [Int] = [Int](1...self.countDayInMonth)
+
+        return array.compactMap({Date(day: $0, month: month, year: yerar)})
+    }
 
 
 }

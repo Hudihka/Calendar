@@ -36,7 +36,11 @@ class MonthVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if let section = self.month.firstIndex(where: {$0.days.contains(where: {$0.isTooday})}), section != 0{
+        if !scrollInTooDay{
+            return
+        }
+
+        if let section = self.month.firstIndex(where: {dataParser.monthInDayTooDay(date: $0.days)}), section != 0 {
             self.collectionView.layoutIfNeeded()
             let customSection = section - 1
             let index = IndexPath(row: month[customSection].days.count - 1, section: customSection)

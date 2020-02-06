@@ -38,42 +38,21 @@ struct Year {
 
 struct Month {
 
-    var countLines: Int
-    var days: [Day] = []
-
+    var days: [Date] = []
     var nameMonth: String
-
     var offset: Int = 0 //отступ для первого дня
-
     var isDiapazone = false //есть хоть один день в этом месяце что в диапазоне возможных дат
-    
 
     init(date: Date, year: Int, numberMonth: Int) {
-        self.countLines = date.weeksInMonth
         self.nameMonth = date.monthString
-
-        let calendar = Calendar.current
-
-        for i in 1...date.countDayInMonth {
-            let dateDay = DateComponents(calendar: calendar, year: year, month: numberMonth, day: i).date!
-
-            if i == 1 {
-               self.offset = dateDay.nameDayMonth - 1
-            }
-
-            self.days.append(Day(date: dateDay, calendar: calendar, numberMonth: i))
-        }
-        
-        if days.first(where: {$0.isDiapazone}) != nil {
-            self.isDiapazone = true
-        }
-        
+        self.offset = Date(day: 1, month: numberMonth, year: year).nameDayMonth - 1
+        self.days = date.daysArrayDate(yerar: year, month: numberMonth)
+        self.isDiapazone = DateParser.shared.monthInDiapason(date: self.days)
     }
 
     func dateInIndex(index: IndexPath) -> Date? {
         let index = index.row - offset
-
-        return days[safe: index]?.date
+        return days[safe: index]
     }
 
 }
