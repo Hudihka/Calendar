@@ -93,21 +93,11 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HwU-fn-tFx" customClass="ViewYear" customModule="Calendar" customModuleProvider="target">
-                                <rect key="frame" x="132.5" y="30" width="110" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="JD5-VC-SxB"/>
-                                    <constraint firstAttribute="width" constant="110" id="qZd-N0-h9U"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HwU-fn-tFx" firstAttribute="centerX" secondItem="lbn-RL-NNL" secondAttribute="centerX" id="Ayl-h4-Veb"/>
                             <constraint firstItem="8zo-w2-3PC" firstAttribute="leading" secondItem="lbn-RL-NNL" secondAttribute="leading" id="MyS-Kq-xHU"/>
                             <constraint firstItem="8zo-w2-3PC" firstAttribute="top" secondItem="lbn-RL-NNL" secondAttribute="top" id="Ntr-tg-iNl"/>
-                            <constraint firstItem="HwU-fn-tFx" firstAttribute="top" secondItem="lbn-RL-NNL" secondAttribute="top" constant="10" id="TaH-z9-PXk"/>
                             <constraint firstItem="8zo-w2-3PC" firstAttribute="trailing" secondItem="lbn-RL-NNL" secondAttribute="trailing" id="V0p-yY-wKg"/>
                             <constraint firstItem="8zo-w2-3PC" firstAttribute="bottom" secondItem="lbn-RL-NNL" secondAttribute="bottom" id="oFM-t9-K7y"/>
                         </constraints>
@@ -115,7 +105,6 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="8zo-w2-3PC" id="gsv-s8-4Rr"/>
-                        <outlet property="viewYear" destination="HwU-fn-tFx" id="Byj-BK-GLB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0r-QG-NbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

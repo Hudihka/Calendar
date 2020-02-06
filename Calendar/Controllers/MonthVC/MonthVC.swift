@@ -13,7 +13,6 @@ class MonthVC: UIViewController {
     weak var delegate: ProtocolReloadDataTV?
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var viewYear: ViewYear!
 
     var month: [Month] = []
 
@@ -29,7 +28,6 @@ class MonthVC: UIViewController {
         
          collectionView.contentInset = UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
 
-        self.viewYear.isHidden = true
     }
 
 
@@ -42,9 +40,13 @@ class MonthVC: UIViewController {
 
         if let section = self.month.firstIndex(where: {dataParser.monthInDayTooDay(date: $0.days)}), section != 0 {
             self.collectionView.layoutIfNeeded()
+
             let customSection = section - 1
-            let index = IndexPath(row: month[customSection].days.count - 1, section: customSection)
+            let days = month[customSection].days
+
+            let index = IndexPath(row: days.count - 1, section: customSection)
             self.collectionView.scrollToItem(at: index, at: .top, animated: true)
+            self.title = "\(Date().year)"
         }
     }
 
@@ -61,18 +63,6 @@ class MonthVC: UIViewController {
         return VC
     }
 
-
-    fileprivate func contentViewYear(){
-        guard let cell = self.collectionView.visibleCells.first as? YearsDayCell else {
-            return
-        }
-
-        viewYear.addRadius(number: 15)
-        viewYear.addShadow()
-
-        viewYear.day = cell.day
-
-    }
 
 
 }
@@ -151,31 +141,34 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     }
 
 
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        self.viewYear.isHidden = false
-//        contentViewYear()
-//    }
-//
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
-//                                        withVelocity velocity: CGPoint,
-//                                        targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//
-//        self.viewYear.isHidden = true
-//
-//    }
-//
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView,
-//                                           willDecelerate decelerate: Bool){
-//        self.viewYear.isHidden = true
-//    }
-//
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
-//        self.viewYear.isHidden = true
-//    }
-//
-//    func scrollViewDidScrollToTop(_ scrollView: UIScrollView){
-//        self.viewYear.isHidden = true
-//    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+        textHeder()
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                        withVelocity velocity: CGPoint,
+                                        targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+
+        textHeder()
+
+    }
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView,
+                                           willDecelerate decelerate: Bool){
+        textHeder()
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
+        textHeder()
+    }
+
+
+   fileprivate func textHeder(){
+        if let cell = self.collectionView.visibleCells.first as? YearsDayCell, let text = cell.day?.year {
+            self.title = "\(text)"
+        }
+    }
 }
 
 
