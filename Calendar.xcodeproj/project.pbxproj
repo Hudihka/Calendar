@@ -15,6 +15,7 @@
 		CE63847323E40A5C00D66538 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63847123E40A5C00D66538 /* LaunchScreen.storyboard */; };
 		CE6FDB2923E996AB00AAB4CB /* ViewYear.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6FDB2823E996AB00AAB4CB /* ViewYear.xib */; };
 		CE6FDB2B23E996F900AAB4CB /* ViewYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FDB2A23E996F900AAB4CB /* ViewYear.swift */; };
+		CE6FDB2D23EC0F8D00AAB4CB /* CasheDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FDB2C23EC0F8D00AAB4CB /* CasheDate.swift */; };
 		CEAD1E3A23E446910097CEB0 /* SupportCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */; };
 		CEAD1E3D23E592E60097CEB0 /* YearsMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3B23E592E60097CEB0 /* YearsMonthCell.swift */; };
 		CEAD1E3E23E592E60097CEB0 /* YearsMonthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD1E3C23E592E60097CEB0 /* YearsMonthCell.xib */; };
@@ -61,6 +62,7 @@
 		CE63847423E40A5C00D66538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE6FDB2823E996AB00AAB4CB /* ViewYear.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewYear.xib; sourceTree = "<group>"; };
 		CE6FDB2A23E996F900AAB4CB /* ViewYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewYear.swift; sourceTree = "<group>"; };
+		CE6FDB2C23EC0F8D00AAB4CB /* CasheDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasheDate.swift; sourceTree = "<group>"; };
 		CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCalendar.swift; sourceTree = "<group>"; };
 		CEAD1E3B23E592E60097CEB0 /* YearsMonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsMonthCell.swift; sourceTree = "<group>"; };
 		CEAD1E3C23E592E60097CEB0 /* YearsMonthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearsMonthCell.xib; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			children = (
 				CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */,
 				CED8B25023E59E22005DDBCF /* DateParser.swift */,
+				CE6FDB2C23EC0F8D00AAB4CB /* CasheDate.swift */,
 			);
 			path = CalendarSupport;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			files = (
 				CEBAC2F823E40BDA00F0478D /* UIScrollView.swift in Sources */,
 				CEBAC30923E40BDA00F0478D /* NSObject.swift in Sources */,
+				CE6FDB2D23EC0F8D00AAB4CB /* CasheDate.swift in Sources */,
 				CEEE50AA23E5997900504F2B /* HeaderCollection.swift in Sources */,
 				CEBAC2FD23E40BDA00F0478D /* UITextField.swift in Sources */,
 				CEBAC30123E40BDA00F0478D /* UILabel.swift in Sources */,

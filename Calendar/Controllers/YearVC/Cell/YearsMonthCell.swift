@@ -49,10 +49,15 @@ class YearsMonthCell: UICollectionViewCell {
         labelMonth.text = month.nameMonth
         labelMonth.alpha = month.isDiapazone ? 1 : 0.3
 
-        arrayDay = month.days
+//        arrayDay = CasheDate.shared.getMonth(year: 2019, month: 4)?.days ?? month.days
+
+        if let mon = CasheDate.shared.getMonth(year: 2019, month: 4)?.days{
+            arrayDay = mon
+        }
+
         offset = month.offset
 
-        collectionView.reloadData()
+//        collectionView.reloadData()
     }
 
 }

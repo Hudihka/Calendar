@@ -12,6 +12,7 @@ import UIKit
 
 struct Year {
 
+    let cashe = CasheDate.shared
     var numberYear: Int
     var months: [Month] = []
 
@@ -19,12 +20,9 @@ struct Year {
 
         self.numberYear = date.year
 
-        let calendar = Calendar.current
-
         for i in 1...12{
-            let dateMonth = DateComponents(calendar: calendar, year: self.numberYear, month: i).date!
 
-            let month = Month(date: dateMonth, year: self.numberYear, numberMonth: i)
+            let month = cashe.getMonth(year: date.year, month: i) ?? cashe.createMonth(year: date.year, monthInt: i)
 
             self.months.append(month)
 
@@ -36,7 +34,7 @@ struct Year {
 
 
 
-struct Month {
+class Month {
 
     var days: [Date] = []
     var nameMonth: String
@@ -57,34 +55,4 @@ struct Month {
 
 }
 
-
-//struct Day {
-//
-//    var isWeekend    : Bool
-//    var isTooday     : Bool
-//
-//    var numberWeekDay: Int
-//    var numberMonth  : Int
-//    
-//    var date         :Date
-//
-//    var isDiapazone = false
-//
-//    init(date: Date, calendar: Calendar, numberMonth: Int) {
-//        self.date          = date
-//
-//        let dParser = DateParser.shared
-//        
-//        self.numberWeekDay = date.weeksInMonth
-//        self.numberMonth   = numberMonth
-//
-//        self.isTooday      = calendar.isDateInToday(date)
-//        self.isWeekend     = calendar.isDateInWeekend(date)
-//        
-//        if date >= dParser.customFrom, date <= dParser.customTo {
-//            self.isDiapazone = true
-//        }
-//        
-//    }
-//}
 

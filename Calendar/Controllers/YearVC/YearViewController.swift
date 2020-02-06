@@ -21,6 +21,8 @@ class YearViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        CasheDate.shared.saveInCasehe()
         
                 self.collectionView.baseSettingsCV(obj: self,
                                                    arrayNameCell: ["YearsMonthCell"],
