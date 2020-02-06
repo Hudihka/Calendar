@@ -58,33 +58,3 @@ struct Month {
 }
 
 
-//struct Day {
-//
-//    var isWeekend    : Bool
-//    var isTooday     : Bool
-//
-//    var numberWeekDay: Int
-//    var numberMonth  : Int
-//    
-//    var date         :Date
-//
-//    var isDiapazone = false
-//
-//    init(date: Date, calendar: Calendar, numberMonth: Int) {
-//        self.date          = date
-//
-//        let dParser = DateParser.shared
-//        
-//        self.numberWeekDay = date.weeksInMonth
-//        self.numberMonth   = numberMonth
-//
-//        self.isTooday      = calendar.isDateInToday(date)
-//        self.isWeekend     = calendar.isDateInWeekend(date)
-//        
-//        if date >= dParser.customFrom, date <= dParser.customTo {
-//            self.isDiapazone = true
-//        }
-//        
-//    }
-//}
-
