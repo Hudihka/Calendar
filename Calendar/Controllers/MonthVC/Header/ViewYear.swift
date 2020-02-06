@@ -13,10 +13,10 @@ class ViewYear: UIView {
     @IBOutlet weak var labelYear: UILabel!
 
 
-    var day: Day? {
+    var day: Date? {
         didSet{
             if let day = day {
-                self.labelYear.text = "\(day.date.year) г."
+                self.labelYear.text = "\(day.year) г."
             }
         }
     }

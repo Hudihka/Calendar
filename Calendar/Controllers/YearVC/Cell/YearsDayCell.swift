@@ -16,8 +16,10 @@ class YearsDayCell: UICollectionViewCell {
     
     @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var rightView: UIView!
+
+    let parser = DateParser.shared
     
-    var day: Day? {
+    var day: Date? {
         didSet{
             desingView()
         }
@@ -49,8 +51,8 @@ class YearsDayCell: UICollectionViewCell {
         labelDay.layer.borderWidth = isYearsVC ? 0.5 : 2
 
 
-        labelDay.text = "\(day.numberMonth)"
-        labelDay.alpha = day.isDiapazone ? 1 : 0.3
+        labelDay.text = day.dayNumber
+        labelDay.alpha = parser.dateInDiapason(date: day) ? 1 : 0.3
 
         labelDay.textColor = day.isWeekend ? colorWekend : colorDay
         
@@ -61,11 +63,11 @@ class YearsDayCell: UICollectionViewCell {
 
         //округлениие вью
 
-        if day.isTooday {
+        if day.isTooDay {
             labelDay.layer.borderColor = colorDay.cgColor
         }
 
-        selected(date: day.date)
+        selected(date: day)
     }
 
     private func selected(date: Date){

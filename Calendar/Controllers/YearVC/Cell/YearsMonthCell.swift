@@ -13,8 +13,8 @@ class YearsMonthCell: UICollectionViewCell {
     @IBOutlet weak var labelMonth: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
 
-        var arrayDay: [Day] = []
-        var offset: Int = 0
+    var arrayDay: [Date] = []
+    var offset: Int = 0
 
 
     override func awakeFromNib() {
@@ -35,7 +35,7 @@ class YearsMonthCell: UICollectionViewCell {
         collectionView.setContentOffset(collectionView.contentOffset, animated: false)
 
         collectionView.allowsSelection = false
-//        collectionView.reloadData()
+        //        collectionView.reloadData()
     }
 
     var collectionViewOffset: CGFloat {
@@ -44,11 +44,11 @@ class YearsMonthCell: UICollectionViewCell {
     }
 
 
-   func desingCell(month: Month){
+    func desingCell(month: Month){
 
         labelMonth.text = month.nameMonth
         labelMonth.alpha = month.isDiapazone ? 1 : 0.3
-        
+
         arrayDay = month.days
         offset = month.offset
 

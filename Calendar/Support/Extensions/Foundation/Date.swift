@@ -133,6 +133,11 @@ extension Date {
         return Int(str)!
     }
 
+    //число
+    var dayNumber: String {
+        return self.printDate(format: "d")
+    }
+
     //номер дня в неделе
     var nameDayMonth: Int {
         return Int(self.printDate(format: "e"))!
@@ -152,5 +157,9 @@ extension Date {
         return array.compactMap({Date(day: $0, month: month, year: yerar)})
     }
 
+
+    var isTooDay: Bool {
+        return Calendar.current.isDateInToday(self)
+    }
 
 }

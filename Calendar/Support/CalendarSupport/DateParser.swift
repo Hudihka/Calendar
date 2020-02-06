@@ -64,15 +64,14 @@ class DateParser {
 
     func monthInDayTooDay(date: [Date]) -> Bool {
 
-        let calendar = Calendar.current
-
-        if date.firstIndex(where: {calendar.isDateInToday($0)}) != nil {
+        if date.firstIndex(where: {$0.isTooDay}) != nil {
             return true
         }
 
         return false
     }
 
+    //MARK: - SELECTED
 
 
     func dateInDiapasonSelected(date: Date) -> Bool {
