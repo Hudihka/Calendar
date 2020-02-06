@@ -71,7 +71,9 @@ struct Month {
     }
 
     func dateInIndex(index: IndexPath) -> Date? {
-        return days[safe: index.row]?.date
+        let index = index.row - offset
+
+        return days[safe: index]?.date
     }
 
 }

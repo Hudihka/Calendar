@@ -105,6 +105,7 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+
         guard let date = month[indexPath.section].dateInIndex(index: indexPath),
             dataParser.dateInDiapason(date: date) else {return}
 
