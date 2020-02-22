@@ -53,7 +53,7 @@ class DateParser {
     //есть хотя бы один день месяца в диапазоне
 
     func monthInDiapason(date: [Date]) -> Bool {
-        if dateInDiapason(date: date.first) || dateInDiapason(date: date.last) {
+        if let _ = date.first(where: {self.dateInDiapason(date: $0)}){
             return true
         }
 

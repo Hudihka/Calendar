@@ -46,8 +46,13 @@ class MonthVC: UIViewController {
 
             let index = IndexPath(row: days.count - 1, section: customSection)
             self.collectionView.scrollToItem(at: index, at: .top, animated: true)
-            self.title = "\(Date().year)"
+            textHeder()
+        } else if let date = month.first?.days.first{
+            self.title = "\(date.year) г."
         }
+
+        collectionView.reloadData()
+
     }
 
 
