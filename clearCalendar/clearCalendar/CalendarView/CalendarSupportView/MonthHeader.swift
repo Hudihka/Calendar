@@ -10,12 +10,15 @@ import UIKit
 
 class MonthHeader: UICollectionReusableView {
     
+    @IBOutlet weak var viewSeparator: UIView!
     @IBOutlet var collectionLabels: UILabel!
     
     var month: Month? {
         didSet{
             collectionLabels.text = nil
             if let month = month {
+                collectionLabels.textColor = CConstants.textColorHeader
+                viewSeparator.backgroundColor = CConstants.textColorHeader
                 collectionLabels.text = month.nameMonth
             }
         }

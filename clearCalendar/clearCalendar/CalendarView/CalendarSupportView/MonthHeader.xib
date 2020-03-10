@@ -45,6 +45,7 @@
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
                 <outlet property="collectionLabels" destination="3ZX-ik-eXS" id="WYz-mZ-6EX"/>
+                <outlet property="viewSeparator" destination="u3o-Oa-bYP" id="MLe-WW-COR"/>
             </connections>
             <point key="canvasLocation" x="186.23188405797103" y="86.383928571428569"/>
         </collectionReusableView>

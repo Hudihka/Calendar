@@ -70,7 +70,7 @@ class YearsDayCell: UICollectionViewCell {
         //округлениие вью
 
         if day.isTooDay {
-            labelDay.layer.borderColor = UIColor.white.cgColor
+            labelDay.layer.borderColor = CConstants.cirkle.cgColor
         }
 
         selected(date: day)
@@ -78,9 +78,9 @@ class YearsDayCell: UICollectionViewCell {
 
     private func textColorLabel(isDiapazone: Bool, isWeekend: Bool) -> UIColor{
         if isWeekend{
-            return isDiapazone ? CConstants.red : UIColor(red: 120/255, green: 81/255, blue: 81/255, alpha: 1)
+            return isDiapazone ? CConstants.wekend : CConstants.wekendNoDiapasone
         } else {
-            return isDiapazone ? UIColor.white : UIColor(red: 84/255, green: 84/255, blue: 84/255, alpha: 1)
+            return isDiapazone ? CConstants.weekdays : CConstants.wekendNoDiapasone
         }
 
 
@@ -109,7 +109,7 @@ class YearsDayCell: UICollectionViewCell {
 
     private func settingsLabelSelected(from: Bool){
         labelDay.textColor = UIColor.white
-        labelDay.backgroundColor = CConstants.colorGrienButton
+        labelDay.backgroundColor = CConstants.selectedViewExtreme
 
         guard let dataOne = DateParser.shared.selectedDataTwo,
               let dataTwo = DateParser.shared.selectedDataOne,

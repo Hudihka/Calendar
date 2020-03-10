@@ -13,8 +13,16 @@ struct CConstants {
 
     //CALENDAR
 
-    static var selectedView          = UIColor(red: 63/255, green: 63/255, blue: 63/255, alpha: 1)
-    static var colorGrienButton      = UIColor(red: 108/255, green: 169/255, blue: 75/255, alpha: 1)
-    static var red                   = UIColor(red: 235/255, green: 0/255, blue: 41/255, alpha: 1)
+    static var selectedView          = UIColor.green
+    static var selectedViewExtreme   = UIColor(red: 94/255, green: 129/255, blue: 93/255, alpha: 1)
 
+    static var weekdays              = UIColor.white
+    static var weekdaysNoDiapasone   = UIColor(red: 196/255, green: 196/255, blue: 196/255, alpha: 1)
+
+    static var wekend                = UIColor.red
+    static var wekendNoDiapasone     = UIColor(red: 172/255, green: 101/255, blue: 101/255, alpha: 1)
+
+    static var textColorHeader       = UIColor.black
+
+    static var cirkle                = UIColor.yellow
 }
