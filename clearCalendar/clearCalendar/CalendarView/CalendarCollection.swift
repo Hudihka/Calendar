@@ -100,6 +100,12 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
         return CGSize(width: widthDay, height: widthDay)
     }
 
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: self.frame.size.width, height: 100)
+    }
+
 
     //MARK: - Header
 
