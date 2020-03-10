@@ -78,7 +78,7 @@ class YearsDayCell: UICollectionViewCell {
 
     private func textColorLabel(isDiapazone: Bool, isWeekend: Bool) -> UIColor{
         if isWeekend{
-            return isDiapazone ? red : UIColor(red: 120/255, green: 81/255, blue: 81/255, alpha: 1)
+            return isDiapazone ? CConstants.red : UIColor(red: 120/255, green: 81/255, blue: 81/255, alpha: 1)
         } else {
             return isDiapazone ? UIColor.white : UIColor(red: 84/255, green: 84/255, blue: 84/255, alpha: 1)
         }
@@ -101,15 +101,15 @@ class YearsDayCell: UICollectionViewCell {
         }
 
         if dataParser.dateInDiapasonSelected(date: date){
-            rightView.backgroundColor = selectedView
-            leftView.backgroundColor = selectedView
+            rightView.backgroundColor = CConstants.selectedView
+            leftView.backgroundColor = CConstants.selectedView
         }
 
     }
 
     private func settingsLabelSelected(from: Bool){
         labelDay.textColor = UIColor.white
-        labelDay.backgroundColor = colorGrienButton
+        labelDay.backgroundColor = CConstants.colorGrienButton
 
         guard let dataOne = DateParser.shared.selectedDataTwo,
               let dataTwo = DateParser.shared.selectedDataOne,
@@ -118,9 +118,9 @@ class YearsDayCell: UICollectionViewCell {
         }
 
         if from {
-            rightView.backgroundColor = selectedView
+            rightView.backgroundColor = CConstants.selectedView
         } else {
-            leftView.backgroundColor = selectedView
+            leftView.backgroundColor = CConstants.selectedView
         }
 
     }

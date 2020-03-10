@@ -18,11 +18,11 @@
 		CEC4619D24176915006FA3D8 /* MonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4619424176915006FA3D8 /* MonthHeader.swift */; };
 		CEC4619E24176915006FA3D8 /* MonthHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC4619524176915006FA3D8 /* MonthHeader.xib */; };
 		CEC4619F24176915006FA3D8 /* YearsDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC4619624176915006FA3D8 /* YearsDayCell.xib */; };
-		CEC461A024176915006FA3D8 /* CalendarViewCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4619724176915006FA3D8 /* CalendarViewCollection.swift */; };
 		CEC461A124176915006FA3D8 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4619824176915006FA3D8 /* CalendarView.swift */; };
 		CEC461A42417697B006FA3D8 /* ExtensionDateCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC461A32417697B006FA3D8 /* ExtensionDateCalendar.swift */; };
 		CEC461A624176B52006FA3D8 /* ExtraExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC461A524176B52006FA3D8 /* ExtraExtension.swift */; };
 		CEC461A824176D56006FA3D8 /* CConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC461A724176D56006FA3D8 /* CConstants.swift */; };
+		CEC461AA241773AA006FA3D8 /* CalendarCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC461A9241773AA006FA3D8 /* CalendarCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,11 +39,11 @@
 		CEC4619424176915006FA3D8 /* MonthHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthHeader.swift; sourceTree = "<group>"; };
 		CEC4619524176915006FA3D8 /* MonthHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthHeader.xib; sourceTree = "<group>"; };
 		CEC4619624176915006FA3D8 /* YearsDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YearsDayCell.xib; sourceTree = "<group>"; };
-		CEC4619724176915006FA3D8 /* CalendarViewCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewCollection.swift; sourceTree = "<group>"; };
 		CEC4619824176915006FA3D8 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		CEC461A32417697B006FA3D8 /* ExtensionDateCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDateCalendar.swift; sourceTree = "<group>"; };
 		CEC461A524176B52006FA3D8 /* ExtraExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraExtension.swift; sourceTree = "<group>"; };
 		CEC461A724176D56006FA3D8 /* CConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CConstants.swift; sourceTree = "<group>"; };
+		CEC461A9241773AA006FA3D8 /* CalendarCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +94,9 @@
 			children = (
 				CEC4618E24176915006FA3D8 /* ManagersCalendar */,
 				CEC4619224176915006FA3D8 /* CalendarSupportView */,
-				CEC4619724176915006FA3D8 /* CalendarViewCollection.swift */,
 				CEC461A32417697B006FA3D8 /* ExtensionDateCalendar.swift */,
 				CEC461A724176D56006FA3D8 /* CConstants.swift */,
+				CEC461A9241773AA006FA3D8 /* CalendarCollection.swift */,
 			);
 			path = CalendarView;
 			sourceTree = "<group>";
@@ -199,12 +199,12 @@
 				CEC461A124176915006FA3D8 /* CalendarView.swift in Sources */,
 				CEC4619A24176915006FA3D8 /* DateParser.swift in Sources */,
 				CEC461A624176B52006FA3D8 /* ExtraExtension.swift in Sources */,
+				CEC461AA241773AA006FA3D8 /* CalendarCollection.swift in Sources */,
 				CEC461A42417697B006FA3D8 /* ExtensionDateCalendar.swift in Sources */,
 				CEC4619D24176915006FA3D8 /* MonthHeader.swift in Sources */,
 				CEC4617C241768CE006FA3D8 /* AppDelegate.swift in Sources */,
 				CEC461A824176D56006FA3D8 /* CConstants.swift in Sources */,
 				CEC4619C24176915006FA3D8 /* YearsDayCell.swift in Sources */,
-				CEC461A024176915006FA3D8 /* CalendarViewCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
