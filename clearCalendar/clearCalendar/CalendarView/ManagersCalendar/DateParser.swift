@@ -23,6 +23,11 @@ class DateParser {
         self.dateTo = to
     }
 
+    func clearDateSettings(){
+        self.dateFrom = nil
+        self.dateTo = nil
+    }
+
     /*
      если для селектДата1 есть значение а селектДата2 нет
      то дата 1 является конечной
@@ -31,6 +36,9 @@ class DateParser {
      эти оба значения сбрасываютя
 
      */
+
+    private var selectedDataOne: Date? = nil
+    private var selectedDataTwo: Date? = nil
 
     func dateSelectedSettings(one: Date?, two: Date?){
         self.selectedDataOne = one
@@ -41,8 +49,10 @@ class DateParser {
         return one ? self.selectedDataOne : self.selectedDataTwo
     }
 
-    private var selectedDataOne: Date? = nil
-    private var selectedDataTwo: Date? = nil
+    func clearSelectedDate(){
+        self.selectedDataOne = nil
+        self.selectedDataTwo = nil
+    }
 
     
     var customFrom: Date {
