@@ -37,7 +37,6 @@ class YearsDayCell: UICollectionViewCell {
     }
 
 
-
     private func desingView(){
 
         clearView()
@@ -50,7 +49,8 @@ class YearsDayCell: UICollectionViewCell {
 
         let radius = self.frame.width * 0.4
 
-        labelDay.addRadius(number: radius)
+        labelDay.layer.cornerRadius = radius
+        labelDay.layer.masksToBounds = true
         labelDay.layer.borderWidth = 2
 
 
@@ -62,8 +62,6 @@ class YearsDayCell: UICollectionViewCell {
             buttonSelected.isEnabled = true
         }
 
-//        labelDay.alpha = isDiapasone ? 1 : 0.15
-        //labelDay.textColor = day.isWeekend ? red : UIColor.white
 
         labelDay.textColor = textColorLabel(isDiapazone: isDiapasone, isWeekend: day.isWeekend)
 
@@ -88,19 +86,17 @@ class YearsDayCell: UICollectionViewCell {
 
     private func selected(date: Date){
 
-        let dataParser = DateParser.shared
-
-        if let oneSelected = dataParser.selectedDataOne, oneSelected == date{
+        if date == parser.getSelectedDate(true){
             settingsLabelSelected(from: true)
             return
         }
 
-        if let twoSelected = dataParser.selectedDataTwo, twoSelected == date {
+        if date == parser.getSelectedDate(false) {
             settingsLabelSelected(from: false)
             return
         }
 
-        if dataParser.dateInDiapasonSelected(date: date){
+        if parser.dateInDiapasonSelected(date: date){
             rightView.backgroundColor = CConstants.selectedView
             leftView.backgroundColor = CConstants.selectedView
         }
@@ -111,8 +107,8 @@ class YearsDayCell: UICollectionViewCell {
         labelDay.textColor = UIColor.white
         labelDay.backgroundColor = CConstants.selectedViewExtreme
 
-        guard let dataOne = DateParser.shared.selectedDataTwo,
-              let dataTwo = DateParser.shared.selectedDataOne,
+        guard let dataOne = parser.getSelectedDate(true),
+              let dataTwo = parser.getSelectedDate(false),
               dataOne != dataTwo else {
             return
         }
@@ -140,10 +136,8 @@ class YearsDayCell: UICollectionViewCell {
     }
 
     @IBAction func buttonSelect(_ sender: Any) {
-
-        if let date = day {
+        if CConstants.selectedDate, let date = day {
             self.delegate?.selectedDate(date)
         }
-
     }
 }

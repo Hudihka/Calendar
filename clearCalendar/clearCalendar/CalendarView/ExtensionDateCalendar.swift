@@ -9,8 +9,17 @@
 import Foundation
 
 
+
 extension Date{
     //календарь
+
+
+        private func printDateFormat(format: String) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = format
+            dateFormatter.locale = Locale(identifier: "ru_RU")
+            return dateFormatter.string(from: self)
+        }
 
     init(day: Int?, month: Int?, year: Int?) {
 
@@ -19,7 +28,13 @@ extension Date{
             return
         }
 
-        if month < 13, month > 0, day > 0, year > 0, let date = "\(day) \(month) \(year)".getDatwToString("dd MM yyyy") {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MM yyyy"
+
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale.current
+
+        if let date = dateFormatter.date(from: "\(day) \(month) \(year)") {
             self = Date(timeInterval: 0, since: date)
             return
         }
@@ -72,12 +87,12 @@ extension Date{
 
 
     var year: Int {
-        let str = self.printDate(format: "yyyy")
+        let str = self.printDateFormat(format: "yyyy")
         return Int(str)!
     }
 
     var day: Int {
-        let str = self.printDate(format: "d")
+        let str = self.printDateFormat(format: "d")
         return Int(str)!
     }
 
@@ -111,18 +126,18 @@ extension Date{
     }
 
     var monthNumber: Int{
-        let str = self.printDate(format: "M")
+        let str = self.printDateFormat(format: "M")
         return Int(str)!
     }
 
     //число
     var dayNumber: String {
-        return self.printDate(format: "d")
+        return self.printDateFormat(format: "d")
     }
 
     //номер дня в неделе
     var nameDayMonth: Int {
-        return Int(self.printDate(format: "e"))!
+        return Int(self.printDateFormat(format: "e"))!
     }
 
     //это выходной

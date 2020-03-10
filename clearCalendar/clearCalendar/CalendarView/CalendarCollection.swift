@@ -27,9 +27,13 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 
         month = DateParser.shared.arrayMonth
 
-        self.baseSettingsCV(obj: self,
-                            arrayNameCell: ["YearsDayCell"],
-                            arrayNameHeders: ["MonthHeader"])
+        self.delegate = self
+        self.dataSource = self
+
+        self.register(UINib(nibName: "YearsDayCell", bundle: nil), forCellWithReuseIdentifier: "YearsDayCell")
+        self.register(UINib(nibName: "MonthHeader", bundle: nil),
+                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                            withReuseIdentifier: "MonthHeader");
 
 
         translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +42,7 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 
 
         showsHorizontalScrollIndicator = false
-        showsVerticalScrollIndicator = false
+        showsVerticalScrollIndicator = true
 
         //скролл при старте
 

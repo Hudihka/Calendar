@@ -25,4 +25,11 @@ struct CConstants {
     static var textColorHeader       = UIColor.black
 
     static var cirkle                = UIColor.yellow
+
+    static var selectedDate          = true
+
+    // если dateFrom или dateTo нил то создаются свои даты +- 50 дней от сегодняшнего дня
+
+    static var countSeconds: Double = 50*24*3600
+
 }

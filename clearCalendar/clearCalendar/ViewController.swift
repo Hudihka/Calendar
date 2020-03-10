@@ -16,8 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
-        //DateParser.shared.dateFrom = filtr.minValue?.dateRemoveT()
-        //DateParser.shared.dateTo = filtr.maxValue?.dateRemoveT()
+        //DateParser.shared.dateSettings(from: Date?, to: Date?)
 
         let frame = CGRect(x: 0, y: 100, width: 414, height: 636)
         let collection = CalendarCollection(frame: frame)

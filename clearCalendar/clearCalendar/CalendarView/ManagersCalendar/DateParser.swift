@@ -15,8 +15,13 @@ class DateParser {
 
     //это начальная и конечная дата для календаря
 
-    var dateFrom: Date? = nil
-    var dateTo: Date? = nil
+    private var dateFrom: Date? = nil
+    private var dateTo: Date? = nil
+
+    func dateSettings(from: Date?, to: Date?){
+        self.dateFrom = from
+        self.dateTo = to
+    }
 
     /*
      если для селектДата1 есть значение а селектДата2 нет
@@ -27,24 +32,26 @@ class DateParser {
 
      */
 
-    var selectedDataOne: Date? = nil
-    var selectedDataTwo: Date? = nil
-    
-
-    // если dateFrom или dateTo нил то создаются свои даты +- 50 дней от сегодняшнего дня
-
-    private var countSeconds: Double {
-        return 50*24*3600
+    func dateSelectedSettings(one: Date?, two: Date?){
+        self.selectedDataOne = one
+        self.selectedDataTwo = two
     }
+
+    func getSelectedDate(_ one: Bool) -> Date?{
+        return one ? self.selectedDataOne : self.selectedDataTwo
+    }
+
+    private var selectedDataOne: Date? = nil
+    private var selectedDataTwo: Date? = nil
+
     
     var customFrom: Date {
-        return dateFrom ?? Date(timeInterval: -1 * (countSeconds), since: Date())
+        return dateFrom ?? Date(timeInterval: -1 * (CConstants.countSeconds), since: Date())
     }
     
     var customTo: Date {
-        return dateTo ?? Date(timeInterval: countSeconds, since: Date())
+        return dateTo ?? Date(timeInterval: CConstants.countSeconds, since: Date())
     }
-
 
 
     func dateInDiapason(date: Date?) -> Bool {
