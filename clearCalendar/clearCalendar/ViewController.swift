@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+        //DateParser.shared.dateFrom = filtr.minValue?.dateRemoveT()
+        //DateParser.shared.dateTo = filtr.maxValue?.dateRemoveT()
+
         let frame = CGRect(x: 0, y: 100, width: 414, height: 636)
         let collection = CalendarCollection(frame: frame)
         collection.delegateLabelTitle = self

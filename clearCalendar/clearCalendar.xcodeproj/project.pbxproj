@@ -18,7 +18,6 @@
 		CEC4619D24176915006FA3D8 /* MonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4619424176915006FA3D8 /* MonthHeader.swift */; };
 		CEC4619E24176915006FA3D8 /* MonthHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC4619524176915006FA3D8 /* MonthHeader.xib */; };
 		CEC4619F24176915006FA3D8 /* YearsDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC4619624176915006FA3D8 /* YearsDayCell.xib */; };
-		CEC461A124176915006FA3D8 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4619824176915006FA3D8 /* CalendarView.swift */; };
 		CEC461A42417697B006FA3D8 /* ExtensionDateCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC461A32417697B006FA3D8 /* ExtensionDateCalendar.swift */; };
 		CEC461A624176B52006FA3D8 /* ExtraExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC461A524176B52006FA3D8 /* ExtraExtension.swift */; };
 		CEC461A824176D56006FA3D8 /* CConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC461A724176D56006FA3D8 /* CConstants.swift */; };
@@ -39,7 +38,6 @@
 		CEC4619424176915006FA3D8 /* MonthHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthHeader.swift; sourceTree = "<group>"; };
 		CEC4619524176915006FA3D8 /* MonthHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthHeader.xib; sourceTree = "<group>"; };
 		CEC4619624176915006FA3D8 /* YearsDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YearsDayCell.xib; sourceTree = "<group>"; };
-		CEC4619824176915006FA3D8 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		CEC461A32417697B006FA3D8 /* ExtensionDateCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDateCalendar.swift; sourceTree = "<group>"; };
 		CEC461A524176B52006FA3D8 /* ExtraExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraExtension.swift; sourceTree = "<group>"; };
 		CEC461A724176D56006FA3D8 /* CConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CConstants.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 			children = (
 				CEC4617B241768CE006FA3D8 /* AppDelegate.swift */,
 				CEC4617D241768CE006FA3D8 /* ViewController.swift */,
-				CEC4619824176915006FA3D8 /* CalendarView.swift */,
 				CEC4617F241768CE006FA3D8 /* Main.storyboard */,
 				CEC461A524176B52006FA3D8 /* ExtraExtension.swift */,
 				CEC4618D24176915006FA3D8 /* CalendarView */,
@@ -196,7 +193,6 @@
 			files = (
 				CEC4617E241768CE006FA3D8 /* ViewController.swift in Sources */,
 				CEC4619924176915006FA3D8 /* SupportCalendar.swift in Sources */,
-				CEC461A124176915006FA3D8 /* CalendarView.swift in Sources */,
 				CEC4619A24176915006FA3D8 /* DateParser.swift in Sources */,
 				CEC461A624176B52006FA3D8 /* ExtraExtension.swift in Sources */,
 				CEC461AA241773AA006FA3D8 /* CalendarCollection.swift in Sources */,
