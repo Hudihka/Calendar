@@ -40,11 +40,6 @@ class DateParser {
     private var selectedDataOne: Date? = nil
     private var selectedDataTwo: Date? = nil
 
-    func dateSelectedSettings(one: Date?, two: Date?){
-        self.selectedDataOne = one
-        self.selectedDataTwo = two
-    }
-
     func getSelectedDate(_ one: Bool) -> Date?{
         return one ? self.selectedDataOne : self.selectedDataTwo
     }
@@ -138,23 +133,26 @@ class DateParser {
     }
 
 
+    private func dateSelectedSettings(one: Date?, two: Date?){
+
+        self.selectedDataOne = one
+        self.selectedDataTwo = CConstants.multiselect ? two : one
+    }
+
     func selectedDate(date: Date){
 
         if selectedDataOne == nil, selectedDataTwo == nil {
-            selectedDataOne = date
+            self.dateSelectedSettings(one: date, two: nil)
         } else if let selectOne = selectedDataOne, selectedDataTwo == nil {
 
             if selectOne <= date {
                 selectedDataTwo = date
             } else {
-                selectedDataTwo = selectOne
-                selectedDataOne = date
+                self.dateSelectedSettings(one: date, two: selectOne)
             }
 
-
         } else if selectedDataOne != nil, selectedDataTwo != nil {
-            selectedDataOne = nil
-            selectedDataTwo = nil
+            clearSelectedDate()
         }
     }
     
