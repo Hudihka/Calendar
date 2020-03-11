@@ -97,26 +97,6 @@ class DateParser {
         return false
     }
 
-    //нужны для строительства коллекции календаря
-
-    private var arrayYears: [Year] {
-
-        if customFrom > customTo {
-            return []
-        }
-
-        let calendar = Calendar.current
-        var years: [Year] = []
-
-        for i in customFrom.year...customTo.year{
-            if let dateYear = DateComponents(calendar: calendar, year: i).date {
-                let year = Year(date: dateYear)
-                years.append(year)
-            }
-        }
-
-        return years
-    }
 
     var arrayMonth: [Month] {
 
@@ -124,14 +104,19 @@ class DateParser {
             return []
         }
 
-        var month: [Month] = []
+        let calendar = Calendar.current
+        var months: [Month] = []
 
-        for obj in self.arrayYears {
-            let montArray = obj.months.filter({$0.isDiapazone})
-            month += montArray
+        for i in customFrom.year...customTo.year{
+            for mon in 1...12 {
+                if let dateMonth = DateComponents(calendar: calendar, year: i, month: mon).date, dateMonth <= customTo {
+                    let month = Month(date: dateMonth, year: i, numberMonth: mon)
+                    months.append(month)
+                }
+            }
         }
 
-        return month
+        return months
     }
 
 
