@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         let collection = CalendarCollection(frame: frame)
         collection.delegateLabelTitle = self
         self.view.addSubview(collection)
+		collection.startCollection(from: nil, to: nil)
 
     }
 

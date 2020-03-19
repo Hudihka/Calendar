@@ -20,11 +20,13 @@ class YearsDayCell: UICollectionViewCell {
     @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var rightView: UIView!
 
-    let parser = DateParser.shared
+//    let parser = DateParser.shared
 
     @IBOutlet weak var buttonSelected: UIButton!
     weak var delegate: SelectedDateCell?
-    
+	
+	var parser: DateParser?
+	
     var day: Date? {
         didSet{
             desingView()
@@ -41,7 +43,7 @@ class YearsDayCell: UICollectionViewCell {
 
         clearView()
 
-        guard let day = day else {
+        guard let day = day, let parser = parser else {
             return
         }
 
@@ -85,14 +87,18 @@ class YearsDayCell: UICollectionViewCell {
     }
 
     private func selected(date: Date){
+		
+		guard let parser = self.parser else {
+			return
+		}
 
         if date == parser.getSelectedDate(true){
-            settingsLabelSelected(from: true)
+			settingsLabelSelected(from: true, dateParser: parser)
             return
         }
 
         if date == parser.getSelectedDate(false) {
-            settingsLabelSelected(from: false)
+			settingsLabelSelected(from: false, dateParser: parser)
             return
         }
 
@@ -103,12 +109,12 @@ class YearsDayCell: UICollectionViewCell {
 
     }
 
-    private func settingsLabelSelected(from: Bool){
+	private func settingsLabelSelected(from: Bool, dateParser: DateParser){
         labelDay.textColor = UIColor.white
         labelDay.backgroundColor = CConstants.selectedViewExtreme
 
-        guard let dataOne = parser.getSelectedDate(true),
-              let dataTwo = parser.getSelectedDate(false),
+        guard let dataOne = dateParser.getSelectedDate(true),
+              let dataTwo = dateParser.getSelectedDate(false),
               dataOne != dataTwo else {
             return
         }

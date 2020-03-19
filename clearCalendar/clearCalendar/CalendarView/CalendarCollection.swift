@@ -17,8 +17,9 @@ protocol LabelTitleText: class {
 
 class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    private let dataParser = DateParser.shared
-    private var month: [Month] = []
+	fileprivate var dateParser: DateParser?
+	
+	private var month: [Month] = []
 
     weak var delegateLabelTitle: LabelTitleText?
 
@@ -29,7 +30,6 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 		
 		self.create(layout: layout)
 		
-
     }
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -47,7 +47,6 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 
 
 	private func create(frame: Bool = true, layout: UICollectionViewFlowLayout){
-		month = DateParser.shared.arrayMonth
 		
 		translatesAutoresizingMaskIntoConstraints = !frame
 		
@@ -68,8 +67,18 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 		showsVerticalScrollIndicator = true
 		
 		self.backgroundColor = CConstants.bacground
-
-		//скролл при старте
+		
+	}
+	
+	func startCollection(from: Date?, to: Date?){
+		
+		dateParser = DateParser(from: from, to: to)
+		month = dateParser!.arrayMonth
+		
+		self.reloadData()
+		
+		guard let dataParser = self.dateParser else {return}
+		
 
 		if let section = self.month.firstIndex(where: {dataParser.monthInDayTooDay(date: $0.days)}), section != 0 {
 			self.layoutIfNeeded()
@@ -84,6 +93,8 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 		} else if let date = month.first?.days.first{
 			self.delegateLabelTitle?.reloadText(text: "\(date.year) г.")
 		}
+		
+		
 	}
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -101,6 +112,8 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
         let ind = indexPath.row
         let mon = month[indexPath.section]
         let offset = mon.offset
+		
+		cell.parser = self.dateParser
 
         if offset != 0, ind < offset {
             cell.day = nil
@@ -158,8 +171,10 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 }
 
 extension CalendarCollection: SelectedDateCell {
-    func selectedDate(_ date: Date){
-        dataParser.selectedDate(date: date)
-        self.reloadData()
-    }
+	func selectedDate(_ date: Date){
+		if let dateParser = dateParser {
+			dateParser.selectedDate(date: date)
+			self.reloadData()
+		}
+	}
 }

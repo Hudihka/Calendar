@@ -10,22 +10,14 @@ import UIKit
 
 class DateParser {
 
-    static let shared = DateParser()
-
-
     //это начальная и конечная дата для календаря
 
     private var dateFrom: Date? = nil
     private var dateTo: Date? = nil
 
-    func dateSettings(from: Date?, to: Date?){
+    init(from: Date?, to: Date?){
         self.dateFrom = from
         self.dateTo = to
-    }
-
-    func clearDateSettings(){
-        self.dateFrom = nil
-        self.dateTo = nil
     }
 
     /*
