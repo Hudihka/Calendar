@@ -17,7 +17,7 @@ protocol LabelTitleText: class {
 
 class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-	fileprivate var dateParser: DateParser?
+	fileprivate var dateParser = DateParser(from: nil, to: nil)
 	
 	private var month: [Month] = []
 
@@ -68,19 +68,27 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 		
 		self.backgroundColor = CConstants.bacground
 		
+		scroll()
+		
 	}
 	
 	func startCollection(from: Date?, to: Date?){
 		
+		if from == nil, to == nil {
+			return
+		}
+		
 		dateParser = DateParser(from: from, to: to)
-		month = dateParser!.arrayMonth
+		month = dateParser.arrayMonth
 		
 		self.reloadData()
 		
-		guard let dataParser = self.dateParser else {return}
+		scroll()
 		
-
-		if let section = self.month.firstIndex(where: {dataParser.monthInDayTooDay(date: $0.days)}), section != 0 {
+	}
+	
+	private func scroll(){
+		if let section = self.month.firstIndex(where: {dateParser.monthInDayTooDay(date: $0.days)}), section != 0 {
 			self.layoutIfNeeded()
 
 			let customSection = section - 1
@@ -93,8 +101,6 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 		} else if let date = month.first?.days.first{
 			self.delegateLabelTitle?.reloadText(text: "\(date.year) г.")
 		}
-		
-		
 	}
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {

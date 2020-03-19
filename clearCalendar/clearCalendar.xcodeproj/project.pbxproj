@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524A0C4F2423B8B200684C77 /* ViewControllerStorybord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524A0C4E2423B8B200684C77 /* ViewControllerStorybord.swift */; };
 		CEC4617C241768CE006FA3D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4617B241768CE006FA3D8 /* AppDelegate.swift */; };
 		CEC4617E241768CE006FA3D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC4617D241768CE006FA3D8 /* ViewController.swift */; };
 		CEC46181241768CE006FA3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC4617F241768CE006FA3D8 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		524A0C4E2423B8B200684C77 /* ViewControllerStorybord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerStorybord.swift; sourceTree = "<group>"; };
 		CEC46178241768CE006FA3D8 /* clearCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clearCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC4617B241768CE006FA3D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEC4617D241768CE006FA3D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				CEC4617B241768CE006FA3D8 /* AppDelegate.swift */,
 				CEC4617D241768CE006FA3D8 /* ViewController.swift */,
+				524A0C4E2423B8B200684C77 /* ViewControllerStorybord.swift */,
 				CEC4617F241768CE006FA3D8 /* Main.storyboard */,
 				CEC4618D24176915006FA3D8 /* CalendarView */,
 				CEC46182241768D2006FA3D8 /* Assets.xcassets */,
@@ -193,6 +196,7 @@
 				CEC4619A24176915006FA3D8 /* DateParser.swift in Sources */,
 				CEC461AA241773AA006FA3D8 /* CalendarCollection.swift in Sources */,
 				CEC461A42417697B006FA3D8 /* ExtensionDateCalendar.swift in Sources */,
+				524A0C4F2423B8B200684C77 /* ViewControllerStorybord.swift in Sources */,
 				CEC4619D24176915006FA3D8 /* MonthHeader.swift in Sources */,
 				CEC4617C241768CE006FA3D8 /* AppDelegate.swift in Sources */,
 				CEC461A824176D56006FA3D8 /* CConstants.swift in Sources */,
