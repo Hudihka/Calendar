@@ -12,6 +12,8 @@ import UIKit
 struct CConstants {
 
     //CALENDAR
+	
+	static var bacground             = UIColor.clear
 
     static var selectedView          = UIColor.green
     static var selectedViewExtreme   = UIColor(red: 94/255, green: 129/255, blue: 93/255, alpha: 1)
@@ -22,7 +24,7 @@ struct CConstants {
     static var wekend                = UIColor.red
     static var wekendNoDiapasone     = UIColor(red: 172/255, green: 101/255, blue: 101/255, alpha: 1)
 
-    static var textColorHeader       = UIColor.black
+    static var textColorHeader       = UIColor.yellow
 
     static var cirkle                = UIColor.yellow
 

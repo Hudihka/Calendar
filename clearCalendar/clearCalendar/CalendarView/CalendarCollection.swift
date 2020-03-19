@@ -24,8 +24,19 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         super.init(frame: frame, collectionViewLayout: layout)
+		
+		self.create()
 
-        month = DateParser.shared.arrayMonth
+    }
+	
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+        self.create()
+    }
+
+
+	private func create(){
+		month = DateParser.shared.arrayMonth
 
         self.delegate = self
         self.dataSource = self
@@ -37,12 +48,11 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 
 
         translatesAutoresizingMaskIntoConstraints = false
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-
 
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = true
+		
+		self.backgroundColor = CConstants.bacground
 
         //скролл при старте
 
@@ -59,11 +69,7 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
         } else if let date = month.first?.days.first{
             self.delegateLabelTitle?.reloadText(text: "\(date.year) г.")
         }
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+	}
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return month.count
@@ -109,6 +115,19 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.frame.size.width, height: 100)
     }
+		
+		
+	func collectionView(_ collectionView: UICollectionView, layout
+						collectionViewLayout: UICollectionViewLayout,
+						minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+			return 0
+	}
+	
+	func collectionView(_ collectionView: UICollectionView,
+						layout collectionViewLayout: UICollectionViewLayout,
+						minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+		return 0
+	}
 
 
     //MARK: - Header
