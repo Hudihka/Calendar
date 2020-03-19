@@ -14,7 +14,6 @@ protocol LabelTitleText: class {
 }
 
 
-
 class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
 	fileprivate var dateParser = DateParser(from: nil, to: nil)
@@ -34,6 +33,11 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 	
 	required init?(coder aDecoder: NSCoder) {
 		
+		/*
+		не забудь поставить Estimate Size в none
+		в настройке габаритов ячейки в сториборде
+		*/
+		
 		super.init(coder: aDecoder)
 		
 		let layout = UICollectionViewFlowLayout()
@@ -48,7 +52,11 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 
 	private func create(frame: Bool = true, layout: UICollectionViewFlowLayout){
 		
-		translatesAutoresizingMaskIntoConstraints = !frame
+		month = dateParser.arrayMonth
+		
+		if frame {
+			translatesAutoresizingMaskIntoConstraints = false
+		}
 		
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
@@ -178,9 +186,7 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
 
 extension CalendarCollection: SelectedDateCell {
 	func selectedDate(_ date: Date){
-		if let dateParser = dateParser {
-			dateParser.selectedDate(date: date)
-			self.reloadData()
-		}
+		dateParser.selectedDate(date: date)
+		self.reloadData()
 	}
 }

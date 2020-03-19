@@ -36,17 +36,12 @@ class DateParser {
         return one ? self.selectedDataOne : self.selectedDataTwo
     }
 
-    func clearSelectedDate(){
-        self.selectedDataOne = nil
-        self.selectedDataTwo = nil
-    }
-
     
-    var customFrom: Date {
+   private var customFrom: Date {
         return dateFrom ?? Date(timeInterval: -1 * (CConstants.countSeconds), since: Date())
     }
     
-    var customTo: Date {
+   private var customTo: Date {
         return dateTo ?? Date(timeInterval: CConstants.countSeconds, since: Date())
     }
 
@@ -144,7 +139,8 @@ class DateParser {
             }
 
         } else if selectedDataOne != nil, selectedDataTwo != nil {
-            clearSelectedDate()
+			self.selectedDataOne = nil
+			self.selectedDataTwo = nil
         }
     }
     
