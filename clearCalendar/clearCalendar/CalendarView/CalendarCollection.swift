@@ -13,6 +13,8 @@ protocol LabelTitleText: class {
     func reloadText(text: String)
 }
 
+
+
 class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     private let dataParser = DateParser.shared
@@ -25,50 +27,63 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
         layout.scrollDirection = .vertical
         super.init(frame: frame, collectionViewLayout: layout)
 		
-		self.create()
+		self.create(layout: layout)
+		
 
     }
 	
 	required init?(coder aDecoder: NSCoder) {
+		
 		super.init(coder: aDecoder)
-        self.create()
+		
+		let layout = UICollectionViewFlowLayout()
+		layout.scrollDirection = .vertical
+		
+		self.collectionViewLayout = layout
+		
+		self.create(frame: false, layout: layout)
+	
     }
 
 
-	private func create(){
+	private func create(frame: Bool = true, layout: UICollectionViewFlowLayout){
 		month = DateParser.shared.arrayMonth
-
-        self.delegate = self
-        self.dataSource = self
-
-        self.register(UINib(nibName: "YearsDayCell", bundle: nil), forCellWithReuseIdentifier: "YearsDayCell")
-        self.register(UINib(nibName: "MonthHeader", bundle: nil),
-                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                            withReuseIdentifier: "MonthHeader");
-
-
-        translatesAutoresizingMaskIntoConstraints = false
-
-        showsHorizontalScrollIndicator = false
-        showsVerticalScrollIndicator = true
+		
+		translatesAutoresizingMaskIntoConstraints = !frame
+		
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+		
+		
+		self.delegate = self
+		self.dataSource = self
+		
+		self.register(UINib(nibName: "YearsDayCell", bundle: nil), forCellWithReuseIdentifier: "YearsDayCell")
+		self.register(UINib(nibName: "MonthHeader", bundle: nil),
+					  forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+					  withReuseIdentifier: "MonthHeader");
+		
+		
+		showsHorizontalScrollIndicator = false
+		showsVerticalScrollIndicator = true
 		
 		self.backgroundColor = CConstants.bacground
 
-        //скролл при старте
+		//скролл при старте
 
-        if let section = self.month.firstIndex(where: {dataParser.monthInDayTooDay(date: $0.days)}), section != 0 {
-            self.layoutIfNeeded()
+		if let section = self.month.firstIndex(where: {dataParser.monthInDayTooDay(date: $0.days)}), section != 0 {
+			self.layoutIfNeeded()
 
-            let customSection = section - 1
-            let days = month[customSection].days
+			let customSection = section - 1
+			let days = month[customSection].days
 
-            let index = IndexPath(row: days.count - 1, section: customSection)
-            self.scrollToItem(at: index, at: .top, animated: true)
+			let index = IndexPath(row: days.count - 1, section: customSection)
+			self.scrollToItem(at: index, at: .top, animated: true)
 
-            textHeder()
-        } else if let date = month.first?.days.first{
-            self.delegateLabelTitle?.reloadText(text: "\(date.year) г.")
-        }
+			textHeder()
+		} else if let date = month.first?.days.first{
+			self.delegateLabelTitle?.reloadText(text: "\(date.year) г.")
+		}
 	}
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -99,7 +114,7 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
     }
 
 
-    //    //    size
+    //size
     //
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -115,19 +130,6 @@ class CalendarCollection: UICollectionView, UICollectionViewDataSource, UICollec
                         referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.frame.size.width, height: 100)
     }
-		
-		
-	func collectionView(_ collectionView: UICollectionView, layout
-						collectionViewLayout: UICollectionViewLayout,
-						minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-			return 0
-	}
-	
-	func collectionView(_ collectionView: UICollectionView,
-						layout collectionViewLayout: UICollectionViewLayout,
-						minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-		return 0
-	}
 
 
     //MARK: - Header
