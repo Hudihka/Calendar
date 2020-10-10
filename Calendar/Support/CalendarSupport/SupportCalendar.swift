@@ -10,29 +10,6 @@ import Foundation
 import UIKit
 
 
-struct Year {
-
-    var numberYear: Int
-    var months: [Month] = []
-
-    init(date: Date) {
-
-        self.numberYear = date.year
-
-        let calendar = Calendar.current
-
-        for i in 1...12{
-            let dateMonth = DateComponents(calendar: calendar, year: self.numberYear, month: i).date!
-
-            let month = Month(date: dateMonth, year: self.numberYear, numberMonth: i)
-
-            self.months.append(month)
-
-        }
-    }
-
-
-}
 
 
 

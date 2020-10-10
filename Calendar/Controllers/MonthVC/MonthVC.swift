@@ -110,7 +110,7 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
 
         dataParser.selectedDate(date: date)
         self.collectionView.reloadData()
-        self.delegate?.reloadDataTV()
+//        self.delegate?.reloadDataTV()
 
     }
 

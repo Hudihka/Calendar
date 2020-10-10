@@ -17,10 +17,9 @@ extension Date {
             return
         }
 
-        if month < 13, month > 0, day > 0, year > 0, let date = "\(day) \(month) \(year)".getDatwToString("dd MM yyyy") {
+        if let date = "\(day) \(month) \(year)".getDatwToString("dd MM yyyy") {
             self = Date(timeInterval: 0, since: date)
             return
-//            self.init(timeInterval: 0, since: date)
         }
 
         self = Date()

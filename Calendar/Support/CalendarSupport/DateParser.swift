@@ -89,40 +89,40 @@ class DateParser {
     }
     
 
-    var arrayYears: [Year] {
-
-        if customFrom > customTo {
-            return []
-        }
-
-        let calendar = Calendar.current
-        var years: [Year] = []
-
-        for i in customFrom.year...customTo.year{
-            if let dateYear = DateComponents(calendar: calendar, year: i).date {
-                let year = Year(date: dateYear)
-                years.append(year)
-            }
-        }
-
-        return years
-    }
+//    var arrayYears: [Year] {
+//
+//        if customFrom > customTo {
+//            return []
+//        }
+//
+//        let calendar = Calendar.current
+//        var years: [Year] = []
+//
+//        for i in customFrom.year...customTo.year{
+//            if let dateYear = DateComponents(calendar: calendar, year: i).date {
+//                let year = Year(date: dateYear)
+//                years.append(year)
+//            }
+//        }
+//
+//        return years
+//    }
     
-    var arrayMonth: [Month] {
-
-        if customFrom > customTo {
-            return []
-        }
-
-        var month: [Month] = []
-
-        for obj in self.arrayYears {
-            let montArray = obj.months.filter({$0.isDiapazone})
-            month += montArray
-        }
-
-        return month
-    }
+//    var arrayMonth: [Month] {
+//
+//        if customFrom > customTo {
+//            return []
+//        }
+//
+//        var month: [Month] = []
+//
+//        for obj in self.arrayYears {
+//            let montArray = obj.months.filter({$0.isDiapazone})
+//            month += montArray
+//        }
+//
+//        return month
+//    }
 
 
     func selectedDate(date: Date){
