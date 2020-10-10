@@ -40,8 +40,6 @@ class YearsDayCell: UICollectionViewCell {
             return
         }
 
-        
-
         //габариты лейбла
 
         let sizeLabel = 0.8 * widthDay

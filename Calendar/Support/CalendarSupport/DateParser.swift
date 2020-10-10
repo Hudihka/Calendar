@@ -28,7 +28,12 @@ class DateParser {
     var selectedDataTwo: Date? = nil
     
     
-    private let countSeconds: Double = 100000
+    private let countSeconds: Double = 3600 * 24 * 60
+    
+    //если мы не задаем начальную и конечную дату
+    //то она задается в расчете от текушей даты
+    //+- 3600 * 24 * 60 секунд
+    //
     
     var customFrom: Date {
         return dateFrom ?? Date(timeInterval: -1 * (countSeconds), since: Date())
