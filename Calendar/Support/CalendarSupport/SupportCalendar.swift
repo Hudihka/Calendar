@@ -15,14 +15,33 @@ struct Month {
     var days: [Date] = []
     var nameMonth: String
     var offset: Int = 0 //отступ для первого дня
-    var isDiapazone = false //есть хоть один день в этом месяце что в диапазоне возможных дат
+    var isConteinsToday = false
 
-    init(date: Date, year: Int, numberMonth: Int) {
+    init(date: Date) {
         self.nameMonth = date.monthString
-        self.offset = Date(day: 1, month: numberMonth, year: year).nameDayMonth - 1
-        self.days = date.daysArrayDate(yerar: year, month: numberMonth)
-        self.isDiapazone = DateParser.shared.monthInDiapason(date: self.days)
+        
+        self.offset = Date(date: date).nameDayMonth - 1
+        self.days = date.daysArrayDate(date: date)
+        
+        if days.firstIndex(where: {$0.isTooDay}) != nil {
+            isConteinsToday = true
+        }
     }
+    
+    init(month: Int, year: Int) {
+        
+        let date = Date(day: 1, month: month, year: year)
+        
+        self.nameMonth = date.monthString
+        
+        self.offset = Date(date: date).nameDayMonth - 1
+        self.days = date.daysArrayDate(date: date)
+        
+        if days.firstIndex(where: {$0.isTooDay}) != nil {
+            isConteinsToday = true
+        }
+    }
+    
 
     func dateInIndex(index: IndexPath) -> Date? {
         let index = index.row - offset

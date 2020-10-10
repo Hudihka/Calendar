@@ -28,6 +28,10 @@ extension Date {
     init(day: String, month: String, year: String) {
         self.init(day: Int(day), month: Int(month), year: Int(year))
     }
+    
+    init(date: Date) { //получение первого числа  месяца
+        self.init(day: 1, month: date.month, year: date.year)
+    }
 
 
 
@@ -92,6 +96,11 @@ extension Date {
         let str = self.printDate(format: "yyyy")
         return Int(str)!
     }
+    
+    var month: Int {
+        let str = self.printDate(format: "MM")
+        return Int(str)!
+    }
 
     var day: Int {
         let str = self.printDate(format: "d")
@@ -150,8 +159,11 @@ extension Date {
 
     //получение всех дней в месяце
 
-    func daysArrayDate(yerar: Int, month: Int) -> [Date]{
+    func daysArrayDate(date: Date) -> [Date]{
         let array: [Int] = [Int](1...self.countDayInMonth)
+        
+        let month = date.month
+        let yerar = date.year
 
         return array.compactMap({Date(day: $0, month: month, year: yerar)})
     }

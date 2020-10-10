@@ -55,25 +55,55 @@ class DateParser {
         return false
     }
 
-    //есть хотя бы один день месяца в диапазоне
 
-    func monthInDiapason(date: [Date]) -> Bool {
-        if let _ = date.first(where: {self.dateInDiapason(date: $0)}){
-            return true
+    
+    var arrayMonth: [Month] {
+
+        if customFrom > customTo {
+            return []
         }
-
-        return false
-    }
-
-    //есть ли в месяце день что идет сейчас
-
-    func monthInDayTooDay(date: [Date]) -> Bool {
-
-        if date.firstIndex(where: {$0.isTooDay}) != nil {
-            return true
+        
+        let fromEar = customFrom.year
+        let toEar = customTo.year
+        
+        let fromMonth = customFrom.month
+        let toMonth = customTo.month
+        
+        var month: [Month] = []
+        
+        if fromEar == toEar {
+            
+            for mon in fromMonth...toMonth{
+                month.append(Month(month: mon, year: fromEar))
+            }
+            
+            return month
+            
+        } else {
+            
+            let arrayYear = [Int](fromEar...toEar)
+            
+            for year in arrayYear {
+                
+                if year == fromEar { //перебираем первый месяц
+                    for mon in fromMonth...12{
+                        month.append(Month(month: mon, year: year))
+                    }
+                } else if year == toEar { //перебираем последний месяц
+                    for mon in 1...toMonth{
+                        month.append(Month(month: mon, year: year))
+                    }
+                } else {
+                    for mon in 1...12{
+                        month.append(Month(month: mon, year: year))
+                    }
+                }
+            }
+            
+            return month
+            
         }
-
-        return false
+        
     }
 
     //MARK: - SELECTED
