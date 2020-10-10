@@ -40,15 +40,15 @@ class YearsDayCell: UICollectionViewCell {
             return
         }
 
-        let isYearsVC = UIApplication.shared.workVC is YearViewController
+        
 
         //габариты лейбла
 
-        let sizeLabel = isYearsVC ? widthDayInMonth : 0.8 * widthDay
-        constreintWidthCell.constant = sizeLabel
+        let sizeLabel = 0.8 * widthDay
+        constreintWidthCell.constant = 0.8 * widthDay
 
         labelDay.addRadius(number: sizeLabel * 0.5)
-        labelDay.layer.borderWidth = isYearsVC ? 0.5 : 2
+        labelDay.layer.borderWidth = 2
 
 
         labelDay.text = day.dayNumber
@@ -58,8 +58,7 @@ class YearsDayCell: UICollectionViewCell {
         
         //ширифт
 
-        let sizeFont: CGFloat = isYearsVC ? 9 : 18
-        labelDay.font = UIFont.systemFont(ofSize: sizeFont, weight: .medium)
+        labelDay.font = UIFont.systemFont(ofSize: 18, weight: .medium)
 
         //округлениие вью
 

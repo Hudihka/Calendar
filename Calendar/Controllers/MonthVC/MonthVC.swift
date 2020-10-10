@@ -10,7 +10,7 @@ import UIKit
 
 class MonthVC: UIViewController {
 
-    weak var delegate: ProtocolReloadDataTV?
+//    weak var delegate: ProtocolReloadDataTV?
 
     @IBOutlet weak var collectionView: UICollectionView!
 

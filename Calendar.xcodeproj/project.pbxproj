@@ -16,8 +16,6 @@
 		CE6FDB2923E996AB00AAB4CB /* ViewYear.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6FDB2823E996AB00AAB4CB /* ViewYear.xib */; };
 		CE6FDB2B23E996F900AAB4CB /* ViewYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FDB2A23E996F900AAB4CB /* ViewYear.swift */; };
 		CEAD1E3A23E446910097CEB0 /* SupportCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */; };
-		CEAD1E3D23E592E60097CEB0 /* YearsMonthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3B23E592E60097CEB0 /* YearsMonthCell.swift */; };
-		CEAD1E3E23E592E60097CEB0 /* YearsMonthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD1E3C23E592E60097CEB0 /* YearsMonthCell.xib */; };
 		CEAD1E4123E5930A0097CEB0 /* YearsDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */; };
 		CEAD1E4223E5930A0097CEB0 /* YearsDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */; };
 		CEBAC2F523E40BDA00F0478D /* ApplicationOpportunities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2DA23E40BD900F0478D /* ApplicationOpportunities.swift */; };
@@ -43,11 +41,8 @@
 		CEBAC30A23E40BDA00F0478D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2F223E40BDA00F0478D /* Utils.swift */; };
 		CEBAC30C23E40BDA00F0478D /* Vibro.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2F423E40BDA00F0478D /* Vibro.swift */; };
 		CEBAC30E23E412EA00F0478D /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC30D23E412EA00F0478D /* UICollectionView.swift */; };
-		CEBAC31123E418C600F0478D /* YearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC31023E418C600F0478D /* YearViewController.swift */; };
 		CEC4C9F823E9531C00812D51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC4C9F723E9531C00812D51 /* Main.storyboard */; };
 		CED8B25123E59E22005DDBCF /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8B25023E59E22005DDBCF /* DateParser.swift */; };
-		CEEE50AA23E5997900504F2B /* HeaderCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEE50A823E5997900504F2B /* HeaderCollection.swift */; };
-		CEEE50AB23E5997900504F2B /* HeaderCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEE50A923E5997900504F2B /* HeaderCollection.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +57,6 @@
 		CE6FDB2823E996AB00AAB4CB /* ViewYear.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewYear.xib; sourceTree = "<group>"; };
 		CE6FDB2A23E996F900AAB4CB /* ViewYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewYear.swift; sourceTree = "<group>"; };
 		CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCalendar.swift; sourceTree = "<group>"; };
-		CEAD1E3B23E592E60097CEB0 /* YearsMonthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsMonthCell.swift; sourceTree = "<group>"; };
-		CEAD1E3C23E592E60097CEB0 /* YearsMonthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearsMonthCell.xib; sourceTree = "<group>"; };
 		CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsDayCell.swift; sourceTree = "<group>"; };
 		CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearsDayCell.xib; sourceTree = "<group>"; };
 		CEBAC2DA23E40BD900F0478D /* ApplicationOpportunities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationOpportunities.swift; sourceTree = "<group>"; };
@@ -89,11 +82,8 @@
 		CEBAC2F223E40BDA00F0478D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CEBAC2F423E40BDA00F0478D /* Vibro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibro.swift; sourceTree = "<group>"; };
 		CEBAC30D23E412EA00F0478D /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
-		CEBAC31023E418C600F0478D /* YearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearViewController.swift; sourceTree = "<group>"; };
 		CEC4C9F723E9531C00812D51 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CED8B25023E59E22005DDBCF /* DateParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
-		CEEE50A823E5997900504F2B /* HeaderCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollection.swift; sourceTree = "<group>"; };
-		CEEE50A923E5997900504F2B /* HeaderCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollection.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +100,8 @@
 		52BD153123E5F288007D1AB2 /* MonthVC */ = {
 			isa = PBXGroup;
 			children = (
+				CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */,
+				CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */,
 				52BD152F23E5F24B007D1AB2 /* MonthVC.swift */,
 				52BD153223E5F34B007D1AB2 /* Header */,
 			);
@@ -151,17 +143,6 @@
 				CEBAC2D923E40BC100F0478D /* Support */,
 			);
 			path = Calendar;
-			sourceTree = "<group>";
-		};
-		CEAD1E4323E593370097CEB0 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				CEAD1E3B23E592E60097CEB0 /* YearsMonthCell.swift */,
-				CEAD1E3C23E592E60097CEB0 /* YearsMonthCell.xib */,
-				CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */,
-				CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		CEBAC2D823E40BA600F0478D /* Resourses */ = {
@@ -234,20 +215,9 @@
 			isa = PBXGroup;
 			children = (
 				52BD153123E5F288007D1AB2 /* MonthVC */,
-				CEBAC31223E419AC00F0478D /* YearVC */,
 				CEC4C9F723E9531C00812D51 /* Main.storyboard */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		CEBAC31223E419AC00F0478D /* YearVC */ = {
-			isa = PBXGroup;
-			children = (
-				CEBAC31023E418C600F0478D /* YearViewController.swift */,
-				CEEE50AC23E5998400504F2B /* Header */,
-				CEAD1E4323E593370097CEB0 /* Cell */,
-			);
-			path = YearVC;
 			sourceTree = "<group>";
 		};
 		CED8B25223E59E26005DDBCF /* CalendarSupport */ = {
@@ -257,15 +227,6 @@
 				CED8B25023E59E22005DDBCF /* DateParser.swift */,
 			);
 			path = CalendarSupport;
-			sourceTree = "<group>";
-		};
-		CEEE50AC23E5998400504F2B /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				CEEE50A823E5997900504F2B /* HeaderCollection.swift */,
-				CEEE50A923E5997900504F2B /* HeaderCollection.xib */,
-			);
-			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,10 +290,8 @@
 				CEC4C9F823E9531C00812D51 /* Main.storyboard in Resources */,
 				CE6FDB2923E996AB00AAB4CB /* ViewYear.xib in Resources */,
 				CE63847323E40A5C00D66538 /* LaunchScreen.storyboard in Resources */,
-				CEAD1E3E23E592E60097CEB0 /* YearsMonthCell.xib in Resources */,
 				CEAD1E4223E5930A0097CEB0 /* YearsDayCell.xib in Resources */,
 				CE63847023E40A5C00D66538 /* Assets.xcassets in Resources */,
-				CEEE50AB23E5997900504F2B /* HeaderCollection.xib in Resources */,
 				52BD153623E5F4C9007D1AB2 /* MonthHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,7 +305,6 @@
 			files = (
 				CEBAC2F823E40BDA00F0478D /* UIScrollView.swift in Sources */,
 				CEBAC30923E40BDA00F0478D /* NSObject.swift in Sources */,
-				CEEE50AA23E5997900504F2B /* HeaderCollection.swift in Sources */,
 				CEBAC2FD23E40BDA00F0478D /* UITextField.swift in Sources */,
 				CEBAC30123E40BDA00F0478D /* UILabel.swift in Sources */,
 				CEAD1E4123E5930A0097CEB0 /* YearsDayCell.swift in Sources */,
@@ -368,7 +326,6 @@
 				CEBAC30223E40BDA00F0478D /* UISegmentedControl.swift in Sources */,
 				CEBAC30A23E40BDA00F0478D /* Utils.swift in Sources */,
 				52BD153023E5F24B007D1AB2 /* MonthVC.swift in Sources */,
-				CEBAC31123E418C600F0478D /* YearViewController.swift in Sources */,
 				CEBAC30023E40BDA00F0478D /* UIViewController.swift in Sources */,
 				CEBAC2FB23E40BDA00F0478D /* UITableView.swift in Sources */,
 				CEBAC2F523E40BDA00F0478D /* ApplicationOpportunities.swift in Sources */,
@@ -376,7 +333,6 @@
 				CEBAC2FE23E40BDA00F0478D /* UIImageViewAndUIImage.swift in Sources */,
 				CE63846923E40A5A00D66538 /* AppDelegate.swift in Sources */,
 				CEBAC2FF23E40BDA00F0478D /* UIButton.swift in Sources */,
-				CEAD1E3D23E592E60097CEB0 /* YearsMonthCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Z96TS9T74Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Calendar/Resourses/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -525,7 +482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = itMS.Calendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -534,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Z96TS9T74Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Calendar/Resourses/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -544,7 +502,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = itMS.Calendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
