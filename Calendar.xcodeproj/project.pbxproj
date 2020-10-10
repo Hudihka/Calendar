@@ -19,21 +19,10 @@
 		CEAD1E4123E5930A0097CEB0 /* YearsDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */; };
 		CEAD1E4223E5930A0097CEB0 /* YearsDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */; };
 		CEBAC2F723E40BDA00F0478D /* Constats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2DC23E40BDA00F0478D /* Constats.swift */; };
-		CEBAC2F823E40BDA00F0478D /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2DF23E40BDA00F0478D /* UIScrollView.swift */; };
-		CEBAC2F923E40BDA00F0478D /* UIWindows.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E023E40BDA00F0478D /* UIWindows.swift */; };
 		CEBAC2FA23E40BDA00F0478D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E123E40BDA00F0478D /* UIView.swift */; };
-		CEBAC2FB23E40BDA00F0478D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E223E40BDA00F0478D /* UITableView.swift */; };
-		CEBAC2FC23E40BDA00F0478D /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E323E40BDA00F0478D /* UIDevice.swift */; };
-		CEBAC2FD23E40BDA00F0478D /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E423E40BDA00F0478D /* UITextField.swift */; };
-		CEBAC2FE23E40BDA00F0478D /* UIImageViewAndUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E523E40BDA00F0478D /* UIImageViewAndUIImage.swift */; };
-		CEBAC2FF23E40BDA00F0478D /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E623E40BDA00F0478D /* UIButton.swift */; };
-		CEBAC30023E40BDA00F0478D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E723E40BDA00F0478D /* UIViewController.swift */; };
-		CEBAC30123E40BDA00F0478D /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E823E40BDA00F0478D /* UILabel.swift */; };
-		CEBAC30223E40BDA00F0478D /* UISegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E923E40BDA00F0478D /* UISegmentedControl.swift */; };
 		CEBAC30423E40BDA00F0478D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2EC23E40BDA00F0478D /* Date.swift */; };
 		CEBAC30523E40BDA00F0478D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2ED23E40BDA00F0478D /* Array.swift */; };
 		CEBAC30723E40BDA00F0478D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2EF23E40BDA00F0478D /* String.swift */; };
-		CEBAC30A23E40BDA00F0478D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2F223E40BDA00F0478D /* Utils.swift */; };
 		CEBAC30E23E412EA00F0478D /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC30D23E412EA00F0478D /* UICollectionView.swift */; };
 		CEC4C9F823E9531C00812D51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEC4C9F723E9531C00812D51 /* Main.storyboard */; };
 		CED8B25123E59E22005DDBCF /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8B25023E59E22005DDBCF /* DateParser.swift */; };
@@ -54,21 +43,10 @@
 		CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsDayCell.swift; sourceTree = "<group>"; };
 		CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearsDayCell.xib; sourceTree = "<group>"; };
 		CEBAC2DC23E40BDA00F0478D /* Constats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constats.swift; sourceTree = "<group>"; };
-		CEBAC2DF23E40BDA00F0478D /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
-		CEBAC2E023E40BDA00F0478D /* UIWindows.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindows.swift; sourceTree = "<group>"; };
 		CEBAC2E123E40BDA00F0478D /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		CEBAC2E223E40BDA00F0478D /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
-		CEBAC2E323E40BDA00F0478D /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
-		CEBAC2E423E40BDA00F0478D /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		CEBAC2E523E40BDA00F0478D /* UIImageViewAndUIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewAndUIImage.swift; sourceTree = "<group>"; };
-		CEBAC2E623E40BDA00F0478D /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		CEBAC2E723E40BDA00F0478D /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		CEBAC2E823E40BDA00F0478D /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
-		CEBAC2E923E40BDA00F0478D /* UISegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControl.swift; sourceTree = "<group>"; };
 		CEBAC2EC23E40BDA00F0478D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CEBAC2ED23E40BDA00F0478D /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		CEBAC2EF23E40BDA00F0478D /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		CEBAC2F223E40BDA00F0478D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CEBAC30D23E412EA00F0478D /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		CEC4C9F723E9531C00812D51 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CED8B25023E59E22005DDBCF /* DateParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
@@ -159,7 +137,6 @@
 			children = (
 				CEBAC2DE23E40BDA00F0478D /* UI */,
 				CEBAC2EB23E40BDA00F0478D /* Foundation */,
-				CEBAC2F223E40BDA00F0478D /* Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,18 +144,8 @@
 		CEBAC2DE23E40BDA00F0478D /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				CEBAC2DF23E40BDA00F0478D /* UIScrollView.swift */,
-				CEBAC2E023E40BDA00F0478D /* UIWindows.swift */,
 				CEBAC2E123E40BDA00F0478D /* UIView.swift */,
-				CEBAC2E223E40BDA00F0478D /* UITableView.swift */,
 				CEBAC30D23E412EA00F0478D /* UICollectionView.swift */,
-				CEBAC2E323E40BDA00F0478D /* UIDevice.swift */,
-				CEBAC2E423E40BDA00F0478D /* UITextField.swift */,
-				CEBAC2E523E40BDA00F0478D /* UIImageViewAndUIImage.swift */,
-				CEBAC2E623E40BDA00F0478D /* UIButton.swift */,
-				CEBAC2E723E40BDA00F0478D /* UIViewController.swift */,
-				CEBAC2E823E40BDA00F0478D /* UILabel.swift */,
-				CEBAC2E923E40BDA00F0478D /* UISegmentedControl.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -285,14 +252,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBAC2F823E40BDA00F0478D /* UIScrollView.swift in Sources */,
-				CEBAC2FD23E40BDA00F0478D /* UITextField.swift in Sources */,
-				CEBAC30123E40BDA00F0478D /* UILabel.swift in Sources */,
 				CEAD1E4123E5930A0097CEB0 /* YearsDayCell.swift in Sources */,
 				CE6FDB2B23E996F900AAB4CB /* ViewYear.swift in Sources */,
-				CEBAC2FC23E40BDA00F0478D /* UIDevice.swift in Sources */,
 				CEAD1E3A23E446910097CEB0 /* SupportCalendar.swift in Sources */,
-				CEBAC2F923E40BDA00F0478D /* UIWindows.swift in Sources */,
 				CEBAC30E23E412EA00F0478D /* UICollectionView.swift in Sources */,
 				CEBAC2F723E40BDA00F0478D /* Constats.swift in Sources */,
 				CEBAC30423E40BDA00F0478D /* Date.swift in Sources */,
@@ -300,15 +262,9 @@
 				CEBAC30523E40BDA00F0478D /* Array.swift in Sources */,
 				CED8B25123E59E22005DDBCF /* DateParser.swift in Sources */,
 				CEBAC30723E40BDA00F0478D /* String.swift in Sources */,
-				CEBAC30223E40BDA00F0478D /* UISegmentedControl.swift in Sources */,
-				CEBAC30A23E40BDA00F0478D /* Utils.swift in Sources */,
 				52BD153023E5F24B007D1AB2 /* MonthVC.swift in Sources */,
-				CEBAC30023E40BDA00F0478D /* UIViewController.swift in Sources */,
-				CEBAC2FB23E40BDA00F0478D /* UITableView.swift in Sources */,
 				52BD153523E5F4C9007D1AB2 /* MonthHeader.swift in Sources */,
-				CEBAC2FE23E40BDA00F0478D /* UIImageViewAndUIImage.swift in Sources */,
 				CE63846923E40A5A00D66538 /* AppDelegate.swift in Sources */,
-				CEBAC2FF23E40BDA00F0478D /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

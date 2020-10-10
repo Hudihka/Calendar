@@ -12,7 +12,7 @@ import Foundation
 extension String {
 
 
-    func getDatwToString(_ formater: String = "yyyy-MM-dd HH:mm:ssZ") -> Date? { //переобраз строку в дату
+    func getDateToString(_ formater: String = "yyyy-MM-dd HH:mm:ssZ") -> Date? { //переобраз строку в дату
         //2019-06-07 07:56:17+00
 
         let dateFormatter = DateFormatter()

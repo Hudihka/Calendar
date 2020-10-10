@@ -49,19 +49,3 @@ extension UICollectionView{
 
 }
 
-
-//func setCollectionViewDataSourceDelegate<D: UICollectionViewDelegateFlowLayout & UICollectionViewDataSource>(_ dataSourceDelegate: D, forRow row: Int) {
-//
-//    collectionView.register(UINib(nibName: CollectionCellDataVC.className, bundle: nil),
-//                            forCellWithReuseIdentifier: CollectionCellDataVC.className)
-//
-//    collectionView.delegate = dataSourceDelegate
-//    collectionView.dataSource = dataSourceDelegate
-//    collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
-//    collectionView.tag = row
-//    collectionView.backgroundColor = UIColor.clear
-//    collectionView.setContentOffset(collectionView.contentOffset, animated: false)
-//    collectionView.isScrollEnabled = dataArray.count > 1
-//
-//    collectionView.allowsSelection = false
-//    collectionView.reloadData()

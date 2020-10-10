@@ -17,7 +17,7 @@ extension Date {
             return
         }
 
-        if let date = "\(day) \(month) \(year)".getDatwToString("dd MM yyyy") {
+        if let date = "\(day) \(month) \(year)".getDateToString("dd MM yyyy") {
             self = Date(timeInterval: 0, since: date)
             return
         }
@@ -34,7 +34,7 @@ extension Date {
     func printDate(format: String = "d MMMM yyyy") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
-        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.locale = Locale.current
         return dateFormatter.string(from: self)
     }
 
@@ -127,7 +127,7 @@ extension Date {
         }
     }
 
-    var monthNumber: Int{
+    private var monthNumber: Int{
         let str = self.printDate(format: "M")
         return Int(str)!
     }

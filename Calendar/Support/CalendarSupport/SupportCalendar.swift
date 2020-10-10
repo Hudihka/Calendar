@@ -10,9 +10,6 @@ import Foundation
 import UIKit
 
 
-
-
-
 struct Month {
 
     var days: [Date] = []
