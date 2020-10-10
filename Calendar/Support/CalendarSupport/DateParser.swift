@@ -10,24 +10,22 @@ import UIKit
 
 class DateParser {
 
-    static let shared = DateParser()
-
     var dateFrom: Date? = Date(day: 1, month: 2, year: 2019)
     var dateTo: Date? = Date(day: 10, month: 6, year: 2023)
 
-    /*
-     если селектДата1 есть значение а селектДата2 нет
-     то дата 1 является конечной
-
-     если есть оба эти значения и пользаватель нажимает еще раз
-     эти оба значения сбрасываютя
-
-     */
+//    /*
+//     если селектДата1 есть значение а селектДата2 нет
+//     то дата 1 является конечной
+//
+//     если есть оба эти значения и пользаватель нажимает еще раз
+//     эти оба значения сбрасываютя
+//
+//     */
 
     var selectedDataOne: Date? = nil
     var selectedDataTwo: Date? = nil
-    
-    
+
+
     private let countSeconds: Double = 3600 * 24 * 60
     
     //если мы не задаем начальную и конечную дату
@@ -35,11 +33,11 @@ class DateParser {
     //+- 3600 * 24 * 60 секунд
     //
     
-    var customFrom: Date {
+    private var customFrom: Date {
         return dateFrom ?? Date(timeInterval: -1 * (countSeconds), since: Date())
     }
     
-    var customTo: Date {
+    private var customTo: Date {
         return dateTo ?? Date(timeInterval: countSeconds, since: Date())
     }
 

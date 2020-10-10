@@ -16,13 +16,16 @@ class MonthVC: UIViewController {
 
     var month: [Month] = []
 
-    let dataParser = DateParser.shared
+    var dataParser = DateParser()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dataParser.dateFrom = Date(day: 1, month: 2, year: 2019)
+        dataParser.dateTo = Date(day: 10, month: 6, year: 2021)
         
+        month = dataParser.arrayMonth
 
         self.collectionView.baseSettingsCV(obj: self,
                                            arrayNameCell: ["YearsDayCell"],
@@ -36,24 +39,24 @@ class MonthVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if !scrollInTooDay{
-            return
-        }
-
-        if let section = self.month.firstIndex(where: {dataParser.monthInDayTooDay(date: $0.days)}), section != 0 {
-            self.collectionView.layoutIfNeeded()
-
-            let customSection = section - 1
-            let days = month[customSection].days
-
-            let index = IndexPath(row: days.count - 1, section: customSection)
-            self.collectionView.scrollToItem(at: index, at: .top, animated: true)
-            textHeder()
-        } else if let date = month.first?.days.first{
-            self.title = "\(date.year) г."
-        }
-
-        collectionView.reloadData()
+//        if !scrollInTooDay{
+//            return
+//        }
+//
+//        if let section = self.month.firstIndex(where: {dataParser.monthInDayTooDay(date: $0.days)}), section != 0 {
+//            self.collectionView.layoutIfNeeded()
+//
+//            let customSection = section - 1
+//            let days = month[customSection].days
+//
+//            let index = IndexPath(row: days.count - 1, section: customSection)
+//            self.collectionView.scrollToItem(at: index, at: .top, animated: true)
+//            textHeder()
+//        } else if let date = month.first?.days.first{
+//            self.title = "\(date.year) г."
+//        }
+//
+//        collectionView.reloadData()
 
     }
 
@@ -94,7 +97,7 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
         let mon = month[indexPath.section]
         let offset = mon.offset
 
-        if offset != 0, ind < offset {
+        if offset != 0, ind < offset { //пустая ячейка
             cell.day = nil
             return cell
         }
@@ -114,6 +117,14 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
         self.collectionView.reloadData()
 //        self.delegate?.reloadDataTV()
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let collectionViewCell = cell as? YearsDayCell else {
+            return
+        }
+        
+        collectionViewCell.parser = self.dataParser
     }
 
 

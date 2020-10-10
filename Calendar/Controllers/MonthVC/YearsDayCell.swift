@@ -17,20 +17,17 @@ class YearsDayCell: UICollectionViewCell {
     @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var rightView: UIView!
 
-    let parser = DateParser.shared
+    var parser: DateParser? {
+        didSet{
+            desingView()
+        }
+    }
     
     var day: Date? {
         didSet{
             desingView()
         }
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-
 
     private func desingView(){
 
@@ -50,7 +47,9 @@ class YearsDayCell: UICollectionViewCell {
 
 
         labelDay.text = day.dayNumber
-        labelDay.alpha = parser.dateInDiapason(date: day) ? 1 : 0.3
+        if let parser = parser {
+            labelDay.alpha = parser.dateInDiapason(date: day) ? 1 : 0.3
+        }
 
         labelDay.textColor = day.isWeekend ? colorWekend : colorDay
         
@@ -68,20 +67,23 @@ class YearsDayCell: UICollectionViewCell {
     }
 
     private func selected(date: Date){
+        
+        guard let parser = parser else {
+            return
+        }
+        
 
-        let dataParser = DateParser.shared
-
-        if let oneSelected = dataParser.selectedDataOne, oneSelected == date{
+        if let oneSelected = parser.selectedDataOne, oneSelected == date{
             settingsLabelSelected(from: true)
             return
         }
 
-        if let twoSelected = dataParser.selectedDataTwo, twoSelected == date {
+        if let twoSelected = parser.selectedDataTwo, twoSelected == date {
             settingsLabelSelected(from: false)
             return
         }
 
-        if dataParser.dateInDiapasonSelected(date: date){
+        if parser.dateInDiapasonSelected(date: date){
             rightView.backgroundColor = selectedView
             leftView.backgroundColor = selectedView
         }
@@ -92,8 +94,9 @@ class YearsDayCell: UICollectionViewCell {
         labelDay.textColor = UIColor.white
         labelDay.backgroundColor = colorWekend
 
-        guard let dataOne = DateParser.shared.selectedDataTwo,
-              let dataTwo = DateParser.shared.selectedDataOne,
+        guard let parser = parser,
+              let dataOne = parser.selectedDataTwo,
+              let dataTwo = parser.selectedDataOne,
               dataOne != dataTwo else {
             return
         }
