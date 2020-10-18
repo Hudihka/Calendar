@@ -13,6 +13,8 @@ class ConstantCalendar {
 	
 static var offsetCV: CGFloat = 5
 static var offsetCell: CGFloat = 3
+	
+static var headerHeight: CGFloat = 100
 
 static var scrollInTooDay = true
 static var aniateScroll = true

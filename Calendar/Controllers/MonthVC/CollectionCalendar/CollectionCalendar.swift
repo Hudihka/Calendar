@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
-class CollectionCalendar: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class CollectionCalendar: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate{
 	
 	var blockTextHeader : (String) -> () = { _ in }
+	private var oldTextYear: String? = nil
 	
 	private var month: [Month] = []
 	
@@ -23,10 +24,15 @@ class CollectionCalendar: UICollectionView, UICollectionViewDataSource, UICollec
 		let layout = UICollectionViewFlowLayout()
 		layout.scrollDirection = .vertical
 		
-		let widt = (frame.width - (2 * ConstantCalendar.offsetCV))/7
+		let offsetCollection = 2 * ConstantCalendar.offsetCV
+		let offsetCells = 6 * ConstantCalendar.offsetCell
+		
+		let widt = (frame.width - offsetCollection - offsetCells)/7
 		layout.estimatedItemSize = CGSize(width: widt, height: widt)
-		layout.minimumLineSpacing = 0//ConstantCalendar.offsetCell
-
+		layout.minimumInteritemSpacing = ConstantCalendar.offsetCell
+		
+		layout.headerReferenceSize = CGSize(width: frame.size.width, height: ConstantCalendar.headerHeight)
+		
 		super.init(frame: frame, collectionViewLayout: layout)
 
 		
@@ -127,24 +133,7 @@ class CollectionCalendar: UICollectionView, UICollectionViewDataSource, UICollec
 		collectionViewCell.parser = self.dataParser
 	}
 	
-	
-	//MARK: - SIZE
-	
-//	func collectionView(_ collectionView: UICollectionView,
-//						layout collectionViewLayout: UICollectionViewLayout,
-//						sizeForItemAt indexPath: IndexPath) -> CGSize {
-//		let widt = (collectionView.frame.size.width - (2 * ConstantCalendar.offsetCV))/7
-//
-//		return CGSize(width: widt, height: widt)
-//	}
-//
-//
-//	func collectionView(_ collectionView: UICollectionView,
-//						layout collectionViewLayout: UICollectionViewLayout,
-//						minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//
-//		return ConstantCalendar.offsetCell
-//	}
+
 	
 	//MARK: - Header
 	
@@ -185,7 +174,11 @@ class CollectionCalendar: UICollectionView, UICollectionViewDataSource, UICollec
 	
 	fileprivate func textHeder(){
 		if let cell = self.visibleCells.first as? YearsDayCell, let text = cell.day?.year {
-			blockTextHeader("\(text)")
+			let textYear = "\(text)"
+			if oldTextYear != textYear {
+				oldTextYear = textYear
+				blockTextHeader(textYear)
+			}
 		}
 	}
 	
