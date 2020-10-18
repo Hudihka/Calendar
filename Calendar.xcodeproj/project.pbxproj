@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5297DD66253C0F4100CC2647 /* ConstantCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297DD65253C0F4100CC2647 /* ConstantCalendar.swift */; };
 		5297DD68253C337000CC2647 /* CollectionCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297DD67253C337000CC2647 /* CollectionCalendar.swift */; };
+		5297DD6A253C3C2E00CC2647 /* MonthTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297DD69253C3C2E00CC2647 /* MonthTestViewController.swift */; };
 		52BD153023E5F24B007D1AB2 /* MonthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD152F23E5F24B007D1AB2 /* MonthVC.swift */; };
 		52BD153523E5F4C9007D1AB2 /* MonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD153323E5F4C9007D1AB2 /* MonthHeader.swift */; };
 		52BD153623E5F4C9007D1AB2 /* MonthHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BD153423E5F4C9007D1AB2 /* MonthHeader.xib */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		5297DD65253C0F4100CC2647 /* ConstantCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCalendar.swift; sourceTree = "<group>"; };
 		5297DD67253C337000CC2647 /* CollectionCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCalendar.swift; sourceTree = "<group>"; };
+		5297DD69253C3C2E00CC2647 /* MonthTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTestViewController.swift; sourceTree = "<group>"; };
 		52BD152F23E5F24B007D1AB2 /* MonthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthVC.swift; sourceTree = "<group>"; };
 		52BD153323E5F4C9007D1AB2 /* MonthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeader.swift; sourceTree = "<group>"; };
 		52BD153423E5F4C9007D1AB2 /* MonthHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthHeader.xib; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				CEC4C9F723E9531C00812D51 /* Main.storyboard */,
 				52BD152F23E5F24B007D1AB2 /* MonthVC.swift */,
+				5297DD69253C3C2E00CC2647 /* MonthTestViewController.swift */,
 				52BD153223E5F34B007D1AB2 /* CollectionCalendar */,
 			);
 			path = MonthVC;
@@ -247,6 +250,7 @@
 				CEBAC2FA23E40BDA00F0478D /* UIView.swift in Sources */,
 				CEBAC30523E40BDA00F0478D /* Array.swift in Sources */,
 				5297DD68253C337000CC2647 /* CollectionCalendar.swift in Sources */,
+				5297DD6A253C3C2E00CC2647 /* MonthTestViewController.swift in Sources */,
 				CED8B25123E59E22005DDBCF /* DateParser.swift in Sources */,
 				5297DD66253C0F4100CC2647 /* ConstantCalendar.swift in Sources */,
 				CEBAC30723E40BDA00F0478D /* String.swift in Sources */,

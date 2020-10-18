@@ -16,11 +16,19 @@ class CollectionCalendar: UICollectionView, UICollectionViewDataSource, UICollec
 	private var month: [Month] = []
 	
 	private var dataParser = DateParser()
+
 	
 	init(frame: CGRect, dataParser: DateParser) {
+		
 		let layout = UICollectionViewFlowLayout()
-		layout.scrollDirection = .horizontal
+		layout.scrollDirection = .vertical
+		
+		let widt = (frame.width - (2 * ConstantCalendar.offsetCV))/7
+		layout.estimatedItemSize = CGSize(width: widt, height: widt)
+		layout.minimumLineSpacing = 0//ConstantCalendar.offsetCell
+
 		super.init(frame: frame, collectionViewLayout: layout)
+
 		
 		self.dataParser = dataParser
 		self.month = dataParser.arrayMonth
@@ -28,6 +36,8 @@ class CollectionCalendar: UICollectionView, UICollectionViewDataSource, UICollec
 		self.delegate = self
 		self.dataSource = self
 		self.backgroundColor = UIColor.clear
+		
+//		translatesAutoresizingMaskIntoConstraints = false
 		
 		self.registerCell(cellName: "YearsDayCell")
 		self.registerHeader(headerName: "MonthHeader")
@@ -120,21 +130,21 @@ class CollectionCalendar: UICollectionView, UICollectionViewDataSource, UICollec
 	
 	//MARK: - SIZE
 	
-	func collectionView(_ collectionView: UICollectionView,
-						layout collectionViewLayout: UICollectionViewLayout,
-						sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let widt = (collectionView.frame.size.width - (2 * ConstantCalendar.offsetCV))/7
-		
-		return CGSize(width: widt, height: widt)
-	}
-	
-	
-	func collectionView(_ collectionView: UICollectionView,
-						layout collectionViewLayout: UICollectionViewLayout,
-						minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-		
-		return ConstantCalendar.offsetCell
-	}
+//	func collectionView(_ collectionView: UICollectionView,
+//						layout collectionViewLayout: UICollectionViewLayout,
+//						sizeForItemAt indexPath: IndexPath) -> CGSize {
+//		let widt = (collectionView.frame.size.width - (2 * ConstantCalendar.offsetCV))/7
+//
+//		return CGSize(width: widt, height: widt)
+//	}
+//
+//
+//	func collectionView(_ collectionView: UICollectionView,
+//						layout collectionViewLayout: UICollectionViewLayout,
+//						minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//
+//		return ConstantCalendar.offsetCell
+//	}
 	
 	//MARK: - Header
 	
