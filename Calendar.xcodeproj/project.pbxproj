@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5297DD66253C0F4100CC2647 /* ConstantCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297DD65253C0F4100CC2647 /* ConstantCalendar.swift */; };
+		5297DD68253C337000CC2647 /* CollectionCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297DD67253C337000CC2647 /* CollectionCalendar.swift */; };
 		52BD153023E5F24B007D1AB2 /* MonthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD152F23E5F24B007D1AB2 /* MonthVC.swift */; };
 		52BD153523E5F4C9007D1AB2 /* MonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD153323E5F4C9007D1AB2 /* MonthHeader.swift */; };
 		52BD153623E5F4C9007D1AB2 /* MonthHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BD153423E5F4C9007D1AB2 /* MonthHeader.xib */; };
 		CE63846923E40A5A00D66538 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63846823E40A5A00D66538 /* AppDelegate.swift */; };
 		CE63847023E40A5C00D66538 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE63846F23E40A5C00D66538 /* Assets.xcassets */; };
 		CE63847323E40A5C00D66538 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63847123E40A5C00D66538 /* LaunchScreen.storyboard */; };
-		CEAD1E3A23E446910097CEB0 /* SupportCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */; };
+		CEAD1E3A23E446910097CEB0 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3923E446910097CEB0 /* Month.swift */; };
 		CEAD1E4123E5930A0097CEB0 /* YearsDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */; };
 		CEAD1E4223E5930A0097CEB0 /* YearsDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */; };
-		CEBAC2F723E40BDA00F0478D /* Constats.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2DC23E40BDA00F0478D /* Constats.swift */; };
 		CEBAC2FA23E40BDA00F0478D /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2E123E40BDA00F0478D /* UIView.swift */; };
 		CEBAC30423E40BDA00F0478D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2EC23E40BDA00F0478D /* Date.swift */; };
 		CEBAC30523E40BDA00F0478D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBAC2ED23E40BDA00F0478D /* Array.swift */; };
@@ -29,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		5297DD65253C0F4100CC2647 /* ConstantCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCalendar.swift; sourceTree = "<group>"; };
+		5297DD67253C337000CC2647 /* CollectionCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCalendar.swift; sourceTree = "<group>"; };
 		52BD152F23E5F24B007D1AB2 /* MonthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthVC.swift; sourceTree = "<group>"; };
 		52BD153323E5F4C9007D1AB2 /* MonthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeader.swift; sourceTree = "<group>"; };
 		52BD153423E5F4C9007D1AB2 /* MonthHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthHeader.xib; sourceTree = "<group>"; };
@@ -37,10 +38,9 @@
 		CE63846F23E40A5C00D66538 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE63847223E40A5C00D66538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE63847423E40A5C00D66538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCalendar.swift; sourceTree = "<group>"; };
+		CEAD1E3923E446910097CEB0 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsDayCell.swift; sourceTree = "<group>"; };
 		CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearsDayCell.xib; sourceTree = "<group>"; };
-		CEBAC2DC23E40BDA00F0478D /* Constats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constats.swift; sourceTree = "<group>"; };
 		CEBAC2E123E40BDA00F0478D /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CEBAC2EC23E40BDA00F0478D /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CEBAC2ED23E40BDA00F0478D /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
@@ -64,21 +64,25 @@
 		52BD153123E5F288007D1AB2 /* MonthVC */ = {
 			isa = PBXGroup;
 			children = (
-				CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */,
-				CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */,
+				CEC4C9F723E9531C00812D51 /* Main.storyboard */,
 				52BD152F23E5F24B007D1AB2 /* MonthVC.swift */,
-				52BD153223E5F34B007D1AB2 /* Header */,
+				52BD153223E5F34B007D1AB2 /* CollectionCalendar */,
 			);
 			path = MonthVC;
 			sourceTree = "<group>";
 		};
-		52BD153223E5F34B007D1AB2 /* Header */ = {
+		52BD153223E5F34B007D1AB2 /* CollectionCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				5297DD67253C337000CC2647 /* CollectionCalendar.swift */,
+				CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */,
+				CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */,
 				52BD153323E5F4C9007D1AB2 /* MonthHeader.swift */,
 				52BD153423E5F4C9007D1AB2 /* MonthHeader.xib */,
+				CEBAC2DD23E40BDA00F0478D /* Extensions */,
+				CED8B25223E59E26005DDBCF /* CalendarSupport */,
 			);
-			path = Header;
+			path = CollectionCalendar;
 			sourceTree = "<group>";
 		};
 		CE63845C23E40A5A00D66538 = {
@@ -102,7 +106,6 @@
 			children = (
 				CEBAC2D823E40BA600F0478D /* Resourses */,
 				CEBAC30F23E417BF00F0478D /* Controllers */,
-				CEBAC2D923E40BC100F0478D /* Support */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -116,16 +119,6 @@
 				CE63847423E40A5C00D66538 /* Info.plist */,
 			);
 			path = Resourses;
-			sourceTree = "<group>";
-		};
-		CEBAC2D923E40BC100F0478D /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				CEBAC2DD23E40BDA00F0478D /* Extensions */,
-				CEBAC2DC23E40BDA00F0478D /* Constats.swift */,
-				CED8B25223E59E26005DDBCF /* CalendarSupport */,
-			);
-			path = Support;
 			sourceTree = "<group>";
 		};
 		CEBAC2DD23E40BDA00F0478D /* Extensions */ = {
@@ -160,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				52BD153123E5F288007D1AB2 /* MonthVC */,
-				CEC4C9F723E9531C00812D51 /* Main.storyboard */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -168,7 +160,7 @@
 		CED8B25223E59E26005DDBCF /* CalendarSupport */ = {
 			isa = PBXGroup;
 			children = (
-				CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */,
+				CEAD1E3923E446910097CEB0 /* Month.swift */,
 				CED8B25023E59E22005DDBCF /* DateParser.swift */,
 				5297DD65253C0F4100CC2647 /* ConstantCalendar.swift */,
 			);
@@ -249,12 +241,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAD1E4123E5930A0097CEB0 /* YearsDayCell.swift in Sources */,
-				CEAD1E3A23E446910097CEB0 /* SupportCalendar.swift in Sources */,
+				CEAD1E3A23E446910097CEB0 /* Month.swift in Sources */,
 				CEBAC30E23E412EA00F0478D /* UICollectionView.swift in Sources */,
-				CEBAC2F723E40BDA00F0478D /* Constats.swift in Sources */,
 				CEBAC30423E40BDA00F0478D /* Date.swift in Sources */,
 				CEBAC2FA23E40BDA00F0478D /* UIView.swift in Sources */,
 				CEBAC30523E40BDA00F0478D /* Array.swift in Sources */,
+				5297DD68253C337000CC2647 /* CollectionCalendar.swift in Sources */,
 				CED8B25123E59E22005DDBCF /* DateParser.swift in Sources */,
 				5297DD66253C0F4100CC2647 /* ConstantCalendar.swift in Sources */,
 				CEBAC30723E40BDA00F0478D /* String.swift in Sources */,

@@ -48,7 +48,7 @@ class MonthVC: UIViewController {
 																					   at: IndexPath(item: 0, section: section)) {
 				var offsetY = attributes.frame.origin.y - collectionView.contentInset.top
 				offsetY -= collectionView.safeAreaInsets.top
-				collectionView.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true) // or animated: false
+				collectionView.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true)
 			}
 			
 			
@@ -86,7 +86,10 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
 		collectionView.registerCell(cellName: "YearsDayCell")
 		collectionView.registerHeader(headerName: "MonthHeader")
 		
-		collectionView.contentInset = UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
+		collectionView.contentInset = UIEdgeInsets(top: 0,
+												   left: ConstantCalendar.offsetCV,
+												   bottom: 0,
+												   right: ConstantCalendar.offsetCV)
         
 	}
 
@@ -143,7 +146,7 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let widt = (collectionView.frame.size.width - (2 * offsetCV))/7
+		let widt = (collectionView.frame.size.width - (2 * ConstantCalendar.offsetCV))/7
         
         return CGSize(width: widt, height: widt)
     }
@@ -153,7 +156,7 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 
-        return offsetCell
+        return ConstantCalendar.offsetCell
     }
 
     //MARK: - Header

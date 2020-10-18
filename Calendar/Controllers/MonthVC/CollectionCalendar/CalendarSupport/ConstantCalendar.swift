@@ -10,8 +10,12 @@ import Foundation
 import UIKit
 
 class ConstantCalendar {
+	
+static var offsetCV: CGFloat = 5
+static var offsetCell: CGFloat = 3
 
 static var scrollInTooDay = true
+static var aniateScroll = true
 static var enableDay = true
   
 
