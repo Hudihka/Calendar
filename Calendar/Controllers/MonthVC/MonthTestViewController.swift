@@ -16,8 +16,8 @@ class MonthTestViewController: UIViewController {
         super.viewDidLoad()
 
         let dataParser = DateParser()
-		dataParser.dateFrom = Date(day: 1, month: 2, year: 2020)
-		dataParser.dateTo = Date(day: 10, month: 2, year: 2021)
+		dataParser.dateFrom = Date(day: 1, month: 10, year: 2020)
+		dataParser.dateTo = Date(day: 31, month: 10, year: 2020)
 		
 		collection = CollectionCalendar(frame: CGRect(origin: .zero, size: self.view.frame.size),
 										dataParser: dataParser)

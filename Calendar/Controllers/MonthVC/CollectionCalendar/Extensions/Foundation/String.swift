@@ -19,7 +19,8 @@ extension String {
         dateFormatter.dateFormat = formater
 
         dateFormatter.timeZone = TimeZone.current
-        dateFormatter.locale = Locale.current
-        return dateFormatter.date(from: self) // replace Date String
+		dateFormatter.locale = Locale(identifier: "ru")
+
+		return dateFormatter.date(from: self) // replace Date String
     }
 }

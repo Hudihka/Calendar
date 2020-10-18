@@ -34,7 +34,7 @@ struct Month {
         
         self.nameMonth = date.monthString
         
-        self.offset = Date(date: date).nameDayMonth - 1
+        self.offset = date.nameDayMonth - 1
         self.days = date.daysArrayDate(date: date)
         
         if days.firstIndex(where: {$0.isTooDay}) != nil {

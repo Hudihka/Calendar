@@ -18,7 +18,8 @@ extension Date {
         }
 
         if let date = "\(day) \(month) \(year)".getDateToString("dd MM yyyy") {
-            self = Date(timeInterval: 0, since: date)
+			let secondOffset = TimeInterval(Calendar.current.timeZone.secondsFromGMT())
+			self = Date(timeInterval: secondOffset, since: date)
             return
         }
 
@@ -34,11 +35,10 @@ extension Date {
     }
 
 
-
     func printDate(format: String = "d MMMM yyyy") -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
-        dateFormatter.locale = Locale.current
+        dateFormatter.locale = Locale(identifier: "ru")
         return dateFormatter.string(from: self)
     }
 
