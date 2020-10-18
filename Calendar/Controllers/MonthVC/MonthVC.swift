@@ -24,38 +24,38 @@ class MonthVC: UIViewController {
         
         month = dataParser.arrayMonth
 
-        self.collectionView.baseSettingsCV(obj: self,
-                                           arrayNameCell: ["YearsDayCell"],
-                                           arrayNameHeders: ["MonthHeader"])
-        
-         collectionView.contentInset = UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
+        settingsCV()
 
     }
+	
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		scrollCollection()
+	}
+	
+	
+	private func scrollCollection(){
 
+        if ConstantCalendar.scrollInTooDay == false {
+            return
+        }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-//        if !scrollInTooDay{
-//            return
-//        }
-//
-//        if let section = self.month.firstIndex(where: {dataParser.monthInDayTooDay(date: $0.days)}), section != 0 {
-//            self.collectionView.layoutIfNeeded()
-//
-//            let customSection = section - 1
-//            let days = month[customSection].days
-//
-//            let index = IndexPath(row: days.count - 1, section: customSection)
-//            self.collectionView.scrollToItem(at: index, at: .top, animated: true)
-//            textHeder()
-//        } else if let date = month.first?.days.first{
-//            self.title = "\(date.year) г."
-//        }
-//
-//        collectionView.reloadData()
-
-    }
+		if let section = self.month.firstIndex(where: {$0.isConteinsToday}), section != 0 {
+			//скроллим к хедеру
+			
+			if let attributes = collectionView.layoutAttributesForSupplementaryElement(ofKind: UICollectionView.elementKindSectionHeader,
+																					   at: IndexPath(item: 0, section: section)) {
+				var offsetY = attributes.frame.origin.y - collectionView.contentInset.top
+				offsetY -= collectionView.safeAreaInsets.top
+				collectionView.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true) // or animated: false
+			}
+			
+			
+			textHeder()
+        }
+		
+	}
 
 
 
@@ -76,6 +76,19 @@ class MonthVC: UIViewController {
 
 
 extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+	
+	fileprivate func settingsCV(){
+		
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.clear
+
+		collectionView.registerCell(cellName: "YearsDayCell")
+		collectionView.registerHeader(headerName: "MonthHeader")
+		
+		collectionView.contentInset = UIEdgeInsets(top: 0, left: offsetCV, bottom: 0, right: offsetCV)
+        
+	}
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return month.count

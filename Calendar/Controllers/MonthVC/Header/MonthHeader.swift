@@ -10,7 +10,8 @@ import UIKit
 
 class MonthHeader: UICollectionReusableView {
     
-    @IBOutlet var collectionLabels: UILabel!
+    @IBOutlet private var collectionLabels: UILabel!
+	@IBOutlet private var separatorView: UIView!
     
     var month: Month? {
         didSet{
@@ -23,7 +24,8 @@ class MonthHeader: UICollectionReusableView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+		collectionLabels.textColor = ConstantCalendar.colorDay
+		separatorView.backgroundColor = ConstantCalendar.colorDay
     }
     
 }

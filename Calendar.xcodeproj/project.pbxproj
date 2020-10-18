@@ -14,8 +14,6 @@
 		CE63846923E40A5A00D66538 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63846823E40A5A00D66538 /* AppDelegate.swift */; };
 		CE63847023E40A5C00D66538 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE63846F23E40A5C00D66538 /* Assets.xcassets */; };
 		CE63847323E40A5C00D66538 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63847123E40A5C00D66538 /* LaunchScreen.storyboard */; };
-		CE6FDB2923E996AB00AAB4CB /* ViewYear.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6FDB2823E996AB00AAB4CB /* ViewYear.xib */; };
-		CE6FDB2B23E996F900AAB4CB /* ViewYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FDB2A23E996F900AAB4CB /* ViewYear.swift */; };
 		CEAD1E3A23E446910097CEB0 /* SupportCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */; };
 		CEAD1E4123E5930A0097CEB0 /* YearsDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */; };
 		CEAD1E4223E5930A0097CEB0 /* YearsDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */; };
@@ -39,8 +37,6 @@
 		CE63846F23E40A5C00D66538 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE63847223E40A5C00D66538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE63847423E40A5C00D66538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE6FDB2823E996AB00AAB4CB /* ViewYear.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewYear.xib; sourceTree = "<group>"; };
-		CE6FDB2A23E996F900AAB4CB /* ViewYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewYear.swift; sourceTree = "<group>"; };
 		CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCalendar.swift; sourceTree = "<group>"; };
 		CEAD1E3F23E5930A0097CEB0 /* YearsDayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearsDayCell.swift; sourceTree = "<group>"; };
 		CEAD1E4023E5930A0097CEB0 /* YearsDayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YearsDayCell.xib; sourceTree = "<group>"; };
@@ -81,8 +77,6 @@
 			children = (
 				52BD153323E5F4C9007D1AB2 /* MonthHeader.swift */,
 				52BD153423E5F4C9007D1AB2 /* MonthHeader.xib */,
-				CE6FDB2823E996AB00AAB4CB /* ViewYear.xib */,
-				CE6FDB2A23E996F900AAB4CB /* ViewYear.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -240,7 +234,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC4C9F823E9531C00812D51 /* Main.storyboard in Resources */,
-				CE6FDB2923E996AB00AAB4CB /* ViewYear.xib in Resources */,
 				CE63847323E40A5C00D66538 /* LaunchScreen.storyboard in Resources */,
 				CEAD1E4223E5930A0097CEB0 /* YearsDayCell.xib in Resources */,
 				CE63847023E40A5C00D66538 /* Assets.xcassets in Resources */,
@@ -256,7 +249,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAD1E4123E5930A0097CEB0 /* YearsDayCell.swift in Sources */,
-				CE6FDB2B23E996F900AAB4CB /* ViewYear.swift in Sources */,
 				CEAD1E3A23E446910097CEB0 /* SupportCalendar.swift in Sources */,
 				CEBAC30E23E412EA00F0478D /* UICollectionView.swift in Sources */,
 				CEBAC2F723E40BDA00F0478D /* Constats.swift in Sources */,
@@ -410,7 +402,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Z96TS9T74Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Calendar/Resourses/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,7 +422,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = Z96TS9T74Z;
 				INFOPLIST_FILE = "$(SRCROOT)/Calendar/Resourses/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

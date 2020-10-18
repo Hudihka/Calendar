@@ -23,5 +23,6 @@ static var colorWekend = UIColor.red
 
 static var colorTextSelected = UIColor.white
 static var selectedView = UIColor.red.withAlphaComponent(0.3)
+	
 
 }
