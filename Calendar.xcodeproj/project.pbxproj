@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5297DD66253C0F4100CC2647 /* ConstantCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297DD65253C0F4100CC2647 /* ConstantCalendar.swift */; };
 		52BD153023E5F24B007D1AB2 /* MonthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD152F23E5F24B007D1AB2 /* MonthVC.swift */; };
 		52BD153523E5F4C9007D1AB2 /* MonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BD153323E5F4C9007D1AB2 /* MonthHeader.swift */; };
 		52BD153623E5F4C9007D1AB2 /* MonthHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52BD153423E5F4C9007D1AB2 /* MonthHeader.xib */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5297DD65253C0F4100CC2647 /* ConstantCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantCalendar.swift; sourceTree = "<group>"; };
 		52BD152F23E5F24B007D1AB2 /* MonthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthVC.swift; sourceTree = "<group>"; };
 		52BD153323E5F4C9007D1AB2 /* MonthHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeader.swift; sourceTree = "<group>"; };
 		52BD153423E5F4C9007D1AB2 /* MonthHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthHeader.xib; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				CEAD1E3923E446910097CEB0 /* SupportCalendar.swift */,
 				CED8B25023E59E22005DDBCF /* DateParser.swift */,
+				5297DD65253C0F4100CC2647 /* ConstantCalendar.swift */,
 			);
 			path = CalendarSupport;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				CEBAC2FA23E40BDA00F0478D /* UIView.swift in Sources */,
 				CEBAC30523E40BDA00F0478D /* Array.swift in Sources */,
 				CED8B25123E59E22005DDBCF /* DateParser.swift in Sources */,
+				5297DD66253C0F4100CC2647 /* ConstantCalendar.swift in Sources */,
 				CEBAC30723E40BDA00F0478D /* String.swift in Sources */,
 				52BD153023E5F24B007D1AB2 /* MonthVC.swift in Sources */,
 				52BD153523E5F4C9007D1AB2 /* MonthHeader.swift in Sources */,

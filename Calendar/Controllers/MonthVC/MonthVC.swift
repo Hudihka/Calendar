@@ -10,14 +10,11 @@ import UIKit
 
 class MonthVC: UIViewController {
 
-//    weak var delegate: ProtocolReloadDataTV?
-
     @IBOutlet weak var collectionView: UICollectionView!
 
     var month: [Month] = []
 
     var dataParser = DateParser()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,12 +107,12 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
 
-        guard let date = month[indexPath.section].dateInIndex(index: indexPath),
+		guard ConstantCalendar.enableDay, 
+			let date = month[indexPath.section].dateInIndex(index: indexPath),
             dataParser.dateInDiapason(date: date) else {return}
 
         dataParser.selectedDate(date: date)
         self.collectionView.reloadData()
-//        self.delegate?.reloadDataTV()
 
     }
     
@@ -133,9 +130,9 @@ extension MonthVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let widt = (collectionView.frame.size.width - (2 * offsetCV))/7
         
-        
-        return CGSize(width: widthDay, height: widthDay)
+        return CGSize(width: widt, height: widt)
     }
 
 

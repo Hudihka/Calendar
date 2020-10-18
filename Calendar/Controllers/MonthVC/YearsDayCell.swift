@@ -38,9 +38,11 @@ class YearsDayCell: UICollectionViewCell {
         }
 
         //габариты лейбла
+		
+		let width = self.contentView.frame.size.width
 
-        let sizeLabel = 0.8 * widthDay
-        constreintWidthCell.constant = 0.8 * widthDay
+		let sizeLabel = 0.8 * width
+        constreintWidthCell.constant = 0.8 * width
 
         labelDay.addRadius(number: sizeLabel * 0.5)
         labelDay.layer.borderWidth = 2
@@ -51,7 +53,7 @@ class YearsDayCell: UICollectionViewCell {
             labelDay.alpha = parser.dateInDiapason(date: day) ? 1 : 0.3
         }
 
-        labelDay.textColor = day.isWeekend ? colorWekend : colorDay
+		labelDay.textColor = day.isWeekend ? ConstantCalendar.colorWekend : ConstantCalendar.colorDay
         
         //ширифт
 
@@ -60,7 +62,7 @@ class YearsDayCell: UICollectionViewCell {
         //округлениие вью
 
         if day.isTooDay {
-            labelDay.layer.borderColor = colorDay.cgColor
+			labelDay.layer.borderColor = ConstantCalendar.colorDay.cgColor
         }
 
         selected(date: day)
@@ -84,15 +86,15 @@ class YearsDayCell: UICollectionViewCell {
         }
 
         if parser.dateInDiapasonSelected(date: date){
-            rightView.backgroundColor = selectedView
-            leftView.backgroundColor = selectedView
+            rightView.backgroundColor = ConstantCalendar.selectedView
+            leftView.backgroundColor = ConstantCalendar.selectedView
         }
 
     }
 
     private func settingsLabelSelected(from: Bool){
-        labelDay.textColor = UIColor.white
-        labelDay.backgroundColor = colorWekend
+		labelDay.textColor = ConstantCalendar.colorTextSelected
+        labelDay.backgroundColor = ConstantCalendar.colorWekend
 
         guard let parser = parser,
               let dataOne = parser.selectedDataTwo,
@@ -102,9 +104,9 @@ class YearsDayCell: UICollectionViewCell {
         }
 
         if from {
-            rightView.backgroundColor = selectedView
+            rightView.backgroundColor = ConstantCalendar.selectedView
         } else {
-            leftView.backgroundColor = selectedView
+            leftView.backgroundColor = ConstantCalendar.selectedView
         }
 
     }
@@ -116,7 +118,7 @@ class YearsDayCell: UICollectionViewCell {
 
 
         labelDay.backgroundColor = UIColor.clear
-        labelDay.textColor = UIColor.black
+        labelDay.textColor = ConstantCalendar.colorDay
 
         leftView.backgroundColor = UIColor.clear
         rightView.backgroundColor = UIColor.clear
