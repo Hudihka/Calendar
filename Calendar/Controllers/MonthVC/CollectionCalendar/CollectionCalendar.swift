@@ -49,8 +49,6 @@ class CollectionCalendar: UICollectionView, UICollectionViewDataSource, UICollec
 		self.dataSource = self
 		self.backgroundColor = UIColor.clear
 		
-//		translatesAutoresizingMaskIntoConstraints = false
-		
 		self.registerCell(cellName: "YearsDayCell")
 		self.registerHeader(headerName: "MonthHeader")
 		
@@ -62,7 +60,37 @@ class CollectionCalendar: UICollectionView, UICollectionViewDataSource, UICollec
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		
+		super.init(coder: aDecoder)
+		
+		let layout = UICollectionViewFlowLayout()
+		layout.scrollDirection = .vertical
+//		let frame = aDecoder.frame
+		
+		let offsetCollection = 2 * ConstantCalendar.offsetCV
+		let offsetCells = 6 * ConstantCalendar.offsetCell
+		
+		let widt = (frame.width - offsetCollection - offsetCells)/7
+		layout.estimatedItemSize = CGSize(width: widt, height: widt)
+		layout.minimumInteritemSpacing = ConstantCalendar.offsetCell
+		
+		layout.headerReferenceSize = CGSize(width: frame.size.width, height: ConstantCalendar.headerHeight)
+		
+		self.collectionViewLayout = layout
+		
+		self.delegate = self
+		self.dataSource = self
+		self.backgroundColor = UIColor.clear
+		
+		//		translatesAutoresizingMaskIntoConstraints = false
+		
+		self.registerCell(cellName: "YearsDayCell")
+		self.registerHeader(headerName: "MonthHeader")
+		
+		self.contentInset = UIEdgeInsets(top: 0, left: ConstantCalendar.offsetCV, bottom: 0, right: ConstantCalendar.offsetCV)
+		
+		self.showsVerticalScrollIndicator = false
+		self.showsHorizontalScrollIndicator = false
 	}
 	
 	

@@ -10,21 +10,17 @@ import UIKit
 
 class MonthTestViewController: UIViewController {
 	
-	private var collection: CollectionCalendar?
-
+	@IBOutlet weak var collection: CollectionCalendar!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let dataParser = DateParser()
-		dataParser.dateFrom = Date(day: 1, month: 10, year: 2020)
-		dataParser.dateTo = Date(day: 31, month: 10, year: 2020)
+		dataParser.dateFrom = Date(day: 1, month: 1, year: 2019)
+		dataParser.dateTo = Date(day: 31, month: 12, year: 2021)
 		
-		collection = CollectionCalendar(frame: CGRect(origin: .zero, size: self.view.frame.size),
-										dataParser: dataParser)
-		
-		self.view.addSubview(collection!)
-		
-		collection?.blockTextHeader = {[weak self] text in
+		collection.dataParser = dataParser
+		collection.blockTextHeader = {[weak self] text in
 			self?.title = text
 		}
 		
@@ -32,7 +28,7 @@ class MonthTestViewController: UIViewController {
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		collection?.scrollCollection()
+		collection.scrollCollection()
 	}
     
 
